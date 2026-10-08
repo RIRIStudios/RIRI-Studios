@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>RIRI Studios | Surreal Vision, Designed Reality</title>
+<meta name="description" content="Hand-painted art by Riri: fine art prints, framed prints, hoodies, stickers, colouring kits and commissions. Ontario, Canada.">
+<link rel="icon" href="img/sk_logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&family=Mrs+Saint+Delafield&display=swap">
+<style>
+/* Layout: gallery-boutique. Centered wordmark header, framed painting with wall label as hero, hoodie collection on a single studio backdrop, originals as gallery labels, quiet tabs, bundles, size guide with matted frames, commissions, editorial footer */
+:root{
+  --ink:#0c0a0a;        /* page */
+  --studio:#1e1a1b;     /* product photo backdrop */
+  --line:#2c2627;       /* hairlines */
+  --creme:#efe7da;      /* text, mats */
+  --mute:#8f8580;       /* secondary text */
+  --red:#c4182b;        /* the one accent: lipstick red, used sparingly */
+  --f-display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --f-body:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+  --f-sig:"Mrs Saint Delafield","Snell Roundhand",cursive;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--creme);font:300 16px/1.65 var(--f-body);padding-inline:20px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin-inline:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:1px solid var(--creme);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-.005em;line-height:1.05}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.eyebrow{font:400 11px/1 var(--f-body);letter-spacing:.28em;text-transform:uppercase;color:var(--mute)}
+.link{font:400 12px var(--f-body);letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:4px}
+.link:hover{color:var(--red)}
+.btn{display:inline-block;font:400 12px var(--f-body);letter-spacing:.22em;text-transform:uppercase;padding:16px 30px;background:var(--creme);color:var(--ink);border:1px solid var(--creme);transition:background .25s,color .25s}
+.btn:hover{background:transparent;color:var(--creme)}
+.btn.ghost{background:transparent;color:var(--creme);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--creme)}
+
+/* announcement + header */
+.announce{margin-inline:-20px;border-bottom:1px solid var(--line);text-align:center;padding:9px 16px;font:400 11px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ink);border-bottom:1px solid var(--line);margin-inline:-20px;padding:0 20px}
+.bar{max-width:1240px;margin-inline:auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px;gap:16px}
+.bar nav{display:flex;gap:28px}
+.bar nav a{font:400 12px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);transition:color .2s}
+.bar nav a:hover{color:var(--creme)}
+.bar nav.r{justify-content:flex-end}
+.word{font:400 24px/1 var(--f-display);letter-spacing:.32em;text-transform:uppercase;padding-left:.32em;white-space:nowrap}
+@media (max-width:900px){.bar{grid-template-columns:auto 1fr auto}.bar nav.l a{display:none}.bar nav.r a:not(#openCart){display:none}.word{font-size:19px;justify-self:center}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding-block:72px 96px}
+.hero h1{font-size:clamp(48px,6.6vw,96px);line-height:1}
+.hero h1 i{display:block;color:var(--creme)}
+.sig{font:400 64px/1 var(--f-sig);color:var(--red);margin:6px 0 18px 4px}
+.hero p{max-width:40ch;color:var(--mute);margin:0 0 36px}
+.hero .acts{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.framed{justify-self:end;width:min(500px,100%)}
+.mat{background:var(--creme);padding:clamp(18px,3.4vw,40px);box-shadow:0 40px 80px -30px #000}
+.mat img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:inset 0 0 0 1px #0002}
+.walllabel{margin-top:18px;display:flex;justify-content:space-between;gap:16px;font-size:13px;color:var(--mute)}
+.walllabel b{font:italic 400 17px var(--f-display);color:var(--creme)}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:40px;padding-block:40px 64px}.framed{justify-self:center;order:-1}}
+
+/* sections */
+section{padding-block:88px;border-top:1px solid var(--line)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.head h2{font-size:clamp(36px,4.6vw,60px);line-height:1.02;margin-top:14px}
+.head h2 i{color:var(--mute)}
+.head p{max-width:46ch;color:var(--mute);margin:0}
+
+/* hoodie collection */
+.coll{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:48px 24px}
+.item{display:flex;flex-direction:column;gap:16px}
+.shot{position:relative;width:100%;aspect-ratio:3/4;background:var(--studio);overflow:hidden;max-width:100%;touch-action:pan-y}
+.shot .open{position:absolute;inset:0;z-index:1}
+.slides{position:absolute;inset:0;display:flex;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.slides img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.arw{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;display:grid;place-items:center;background:#0c0a0a99;color:var(--creme);font-size:18px;font-weight:300;opacity:0;transition:opacity .25s;z-index:2}
+.arw.prev{left:10px}.arw.next{right:10px}
+.shot:hover .arw,.arw:focus-visible{opacity:1}
+@media (hover:none){.arw{opacity:.85}}
+.sides{display:flex;gap:18px;margin-top:2px}
+.sides button{font:400 11px var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);padding-bottom:5px;border-bottom:1px solid transparent}
+.sides button[aria-pressed="true"]{color:var(--creme);border-color:var(--creme)}
+.dlg .shot{aspect-ratio:3/4}
+.dlg .thumbs{display:flex;gap:8px}
+.dlg .thumbs button{width:58px;aspect-ratio:3/4;overflow:hidden;background:var(--studio);border:1px solid var(--line)}
+.dlg .thumbs button[aria-pressed="true"]{border-color:var(--creme)}
+.dlg .thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.irow{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.item h3{font-size:22px}
+.price{font:400 15px var(--f-body);letter-spacing:.04em}
+.cols{display:flex;gap:14px;align-items:center;font-size:12px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase}
+.cols button{display:flex;align-items:center;gap:7px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+.cols button i{width:11px;height:11px;border-radius:50%;border:1px solid #fff4}
+.cols button[aria-pressed="true"]{color:var(--creme)}
+.cols button[aria-pressed="true"] i{box-shadow:0 0 0 2px var(--ink),0 0 0 3px var(--creme)}
+
+/* originals */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:40px 24px}
+.gallery button{text-align:left;display:block;width:100%}
+.gallery button:hover .mat{box-shadow:0 24px 40px -24px #000;transform:translateY(-3px)}
+.gallery .mat{transition:transform .4s ease,box-shadow .4s ease}
+.gallery figure{margin:0}
+.gallery .mat{padding:12px;box-shadow:none}
+.gallery .mat img{aspect-ratio:3/4}
+.gallery figcaption{margin-top:16px;display:flex;flex-direction:column;gap:2px;font-size:13px;color:var(--mute)}
+.gallery figcaption b{font:italic 400 19px var(--f-display);color:var(--creme)}
+.dlg .art{background:var(--studio);display:grid;place-items:center;padding:28px;min-height:100%}
+.dlg .art .mat{padding:14px;box-shadow:0 30px 60px -30px #000;max-width:100%}
+.dlg .art img{display:block;max-width:100%;max-height:70vh;width:auto;height:auto}
+.or{display:flex;align-items:center;gap:14px;color:var(--mute);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+@media (max-width:520px){.gallery{grid-template-columns:1fr 1fr;gap:28px 14px}}
+
+/* shop tabs + grid */
+.tabs{display:flex;gap:28px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:44px}
+.tabs button{font:400 12px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);padding:0 0 14px;border-bottom:1px solid transparent;margin-bottom:-1px}
+.tabs button[aria-pressed="true"]{color:var(--creme);border-color:var(--creme)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:44px 24px}
+.card{text-align:left;display:flex;flex-direction:column;gap:14px}
+.ph{position:relative;aspect-ratio:4/5;background:var(--studio);display:grid;place-items:center;overflow:hidden;max-width:100%}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.card:hover .ph img{transform:scale(1.03)}
+.ph.print{padding:13%}
+.ph.print .inner{position:relative;width:100%;height:100%;background:var(--creme);padding:7%;box-shadow:0 20px 40px -20px #000}
+.ph.print .inner img{position:relative;display:block}
+.soon{font:italic 400 15px var(--f-display);color:var(--mute)}
+.card h3{font-size:20px}
+.card .irow span{color:var(--mute);font-size:13px}
+
+/* bundles */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+.tier{padding:40px 32px;display:flex;flex-direction:column;gap:22px;border-right:1px solid var(--line)}
+.tier:last-child{border-right:0}
+.tier.feat{background:#151213;box-shadow:inset 0 2px 0 var(--red)}
+.tier h3{font-size:44px;font-style:italic}
+.tier ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tier li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+.tier li span:last-child{color:var(--mute)}
+.tp{display:flex;align-items:baseline;gap:14px;margin-top:auto}
+.tp b{font:400 40px var(--f-display)}
+.tp s{color:var(--mute);font-size:15px}
+.tp em{font-style:normal;color:var(--red);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:900px){.tiers{grid-template-columns:1fr}.tier{border-right:0;border-bottom:1px solid var(--line)}.tier:last-child{border-bottom:0}}
+
+/* size guide */
+.sizes{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+.tbl{width:100%;border-collapse:collapse;margin-top:28px}
+.tbl th,.tbl td{text-align:left;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.tbl th{font:400 11px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.tbl td:last-child,.tbl th:last-child{text-align:right}
+.wall{display:flex;align-items:flex-end;justify-content:center;gap:clamp(14px,3vw,32px);flex-wrap:wrap;padding:48px 16px;background:#141112}
+.wf{display:flex;flex-direction:column;align-items:center;gap:12px}
+.wf .frame{border:clamp(4px,.8vw,7px) solid #050404;background:var(--creme);box-shadow:0 18px 30px -12px #000;max-width:100%}
+.wf .frame img{display:block;width:100%;height:100%;object-fit:cover}
+.wf span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+@media (max-width:860px){.sizes{grid-template-columns:1fr;gap:40px}}
+
+/* originals & commissions */
+.comm{display:grid;grid-template-columns:1fr 1fr;gap:72px}
+.comm p{color:var(--mute);margin:0}
+.steps{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column}
+.steps li{display:grid;grid-template-columns:40px 1fr;padding:16px 0;border-bottom:1px solid var(--line)}
+.steps li span{font:italic 400 18px var(--f-display);color:var(--red)}
+.form{display:flex;flex-direction:column;gap:20px}
+.f label{display:block;font:400 11px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.f input,.f textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--creme);padding:10px 0;font:300 16px var(--f-body);border-radius:0}
+.f input:focus,.f textarea:focus{outline:0;border-color:var(--creme)}
+.f textarea{min-height:72px;resize:vertical}
+.presets{display:flex;gap:8px;flex-wrap:wrap}
+.o{border:1px solid var(--line);padding:9px 14px;font-size:13px;letter-spacing:.04em;transition:border-color .2s}
+.o:hover{border-color:var(--mute)}
+.o[aria-pressed="true"]{border-color:var(--creme)}
+.calc{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:end}
+.quote{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:18px 0;border-block:1px solid var(--line)}
+.quote span{color:var(--mute);font-size:14px}
+.quote b{font:400 44px var(--f-display)}
+.summary{border:1px solid var(--line);padding:16px;font:300 14px/1.7 var(--f-body);white-space:pre-wrap;margin:0}
+@media (max-width:860px){.comm{grid-template-columns:1fr;gap:48px}}
+
+/* footer */
+footer{border-top:1px solid var(--line);margin-inline:-20px;padding:72px 20px 48px}
+.fin{max-width:1240px;margin-inline:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.fin .word{font-size:30px;padding-left:0}
+.fin p{color:var(--mute);margin:14px 0 0;font-size:14px}
+.fin h4{font:400 11px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin:0 0 16px}
+.fin ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.news{display:flex;border-bottom:1px solid var(--line);margin-top:20px}
+.news input{flex:1;min-width:0;background:transparent;border:0;color:var(--creme);padding:10px 0;font:300 15px var(--f-body)}
+.news input:focus{outline:0}
+.news button{font:400 11px var(--f-body);letter-spacing:.22em;text-transform:uppercase}
+.legal{max-width:1240px;margin:56px auto 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--mute);letter-spacing:.06em}
+@media (max-width:760px){.fin{grid-template-columns:1fr 1fr}.fin>div:first-child{grid-column:1/-1}}
+
+/* dialog */
+.scrim{position:fixed;inset:0;background:#000d;z-index:40;display:grid;place-items:center;padding:16px}
+.dlgwrap{position:relative;width:100%;max-width:980px}
+.dlg{background:var(--ink);border:1px solid var(--line);max-height:90vh;overflow:auto;display:grid;grid-template-columns:1.1fr 1fr}
+.dlg .ph{aspect-ratio:3/4}
+.dlg .info{padding:44px 40px;display:flex;flex-direction:column;gap:24px;min-width:0}
+.dlg h3{font-size:40px;line-height:1.05}
+.dlg .dp{font-size:18px;letter-spacing:.04em}
+.dlg p{color:var(--mute);margin:0}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.sw{display:flex;align-items:center;gap:8px}
+.sw i{width:12px;height:12px;border-radius:50%;border:1px solid #fff4}
+.qty{display:flex;align-items:center;border:1px solid var(--line);width:max-content}
+.qty button{width:42px;height:42px}
+.qty span{min-width:28px;text-align:center}
+.deal{font-size:13px;color:var(--red);letter-spacing:.04em}
+.x{position:absolute;top:14px;right:14px;width:40px;height:40px;font-size:22px;font-weight:300;color:var(--creme);z-index:2;background:#0c0a0acc}
+@media (max-width:760px){.dlg{grid-template-columns:1fr}.dlg .info{padding:28px 22px}}
+
+/* cart */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--ink);border-left:1px solid var(--line);z-index:50;display:flex;flex-direction:column;padding:calc(28px + env(safe-area-inset-top,0px)) 28px calc(24px + env(safe-area-inset-bottom,0px));gap:20px;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.drawer.open{transform:none}
+.drawer h3{font-size:30px}
+.lines{flex:1;overflow:auto;display:flex;flex-direction:column}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:4px 16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.line .t{width:64px;aspect-ratio:3/4;background:var(--studio);grid-row:span 2;overflow:hidden}
+.line .t img{width:100%;height:100%;object-fit:cover;display:block}
+.line small{color:var(--mute);font-size:13px;grid-column:2/-1}
+.line.disc{grid-template-columns:1fr auto}
+.line.disc span{color:var(--red)}
+.rm{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+.ship{font-size:13px;color:var(--mute)}
+.track{height:1px;background:var(--line);margin-top:10px}
+.track i{display:block;height:100%;background:var(--creme);transition:width .4s}
+.tot{display:flex;justify-content:space-between;font-size:17px}
+.conote{font-size:13px;color:var(--mute);border:1px solid var(--line);padding:12px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--creme);color:var(--ink);padding:12px 22px;font:400 12px var(--f-body);letter-spacing:.18em;text-transform:uppercase;z-index:60}
+
+/* ---- fun layer ---- */
+.hero{position:relative}
+.slap{position:absolute;inset:0;pointer-events:none;z-index:3}
+.sk{position:absolute;pointer-events:auto;cursor:grab;touch-action:none;user-select:none;-webkit-user-drag:none;filter:drop-shadow(0 8px 10px #000a);transition:transform .35s cubic-bezier(.3,1.7,.5,1),filter .25s}
+.sk:hover{filter:drop-shadow(0 12px 16px #000c)}
+.sk.lift{cursor:grabbing;filter:drop-shadow(0 26px 26px #000c);transition:filter .2s}
+.sk.slapin{animation:slapin .5s cubic-bezier(.3,1.7,.5,1) both}
+@keyframes slapin{from{opacity:0;transform:var(--r) scale(1.6)}to{opacity:1;transform:var(--r) scale(1)}}
+.hint{position:absolute;z-index:2;right:0;bottom:34px;font:400 30px/1 var(--f-sig);color:var(--red);transform:rotate(-4deg);display:flex;align-items:center;gap:10px;pointer-events:auto}
+.hint button{font:400 11px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:3px;transform:rotate(4deg)}
+.hint button:hover{color:var(--creme)}
+@media (max-width:860px){.hint{position:static;justify-content:center;margin-top:-20px;margin-bottom:28px}}
+.card.t-sticker .ph img,.card.t-mystery .ph img{transition:transform .55s cubic-bezier(.3,1.7,.5,1)}
+.card.t-sticker:hover .ph img{transform:rotate(-6deg) scale(1.07)}
+.card.t-mystery:hover .ph img{animation:shake .7s ease both}
+@keyframes shake{0%,100%{transform:rotate(0)}20%{transform:rotate(-5deg) scale(1.03)}40%{transform:rotate(4deg) scale(1.03)}60%{transform:rotate(-3deg)}80%{transform:rotate(2deg)}}
+.card.t-print .ph.print .inner{transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+.card.t-print:hover .ph.print .inner{transform:rotate(-1.5deg) translateY(-4px)}
+.item:hover .shot{transform:rotate(-.6deg)}
+.shot{transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+#openCart.bump{animation:bump .5s cubic-bezier(.3,1.8,.5,1)}
+@keyframes bump{40%{transform:scale(1.25) rotate(-6deg);color:var(--red)}}
+.flyer{position:fixed;z-index:70;width:84px;pointer-events:none;filter:drop-shadow(0 8px 10px #000a)}
+/* ===== red canvas layout ===== */
+html,body{overflow-x:clip}
+:root{--canvas:#a51d1b}
+.band{position:relative;background:var(--ink);color:var(--creme);box-shadow:0 0 0 100vmax var(--ink);clip-path:inset(0 -100vmax);border-top:0!important}
+.band.red{--ink:var(--canvas);--studio:#8e1716;--line:#ffffff30;--mute:#f6d2cc;--red:#140c0c}
+.band.light{--ink:#efe7da;--creme:#140e0e;--studio:#e3d8c7;--line:#d3c6b2;--mute:#6f6460;--red:#a51d1b}
+.band.light .btn:hover{color:var(--creme)}
+.band.red .btn{background:#140c0c;border-color:#140c0c;color:#efe7da}
+.band.red .btn:hover{background:transparent;color:#efe7da;border-color:#efe7da}
+.band.red .btn.ghost{background:transparent;border-color:#ffffff60}
+header{background:var(--canvas);border-bottom-color:#00000030}
+header .bar nav a{color:#f6d2cc}
+header .bar nav a:hover,header .word{color:#efe7da}
+.announce{background:#140c0c}
+/* hero */
+.hero2{min-height:min(92vh,860px);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding-block:56px 0!important;overflow:visible}
+.giant{position:absolute;left:-.06em;bottom:-.2em;font:400 clamp(150px,31vw,470px)/.8 var(--f-display);letter-spacing:-.04em;color:#efe7da;z-index:0;pointer-events:none;white-space:nowrap;user-select:none}
+.bleed{position:absolute;right:-2%;top:0;bottom:0;width:min(58%,700px);z-index:1}
+.bleed img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 18%,#000 94%,transparent 100%),linear-gradient(to top,transparent 0,#000 14%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 18%,#000 94%,transparent 100%),linear-gradient(to top,transparent 0,#000 14%);mask-composite:intersect}
+.vlabel{position:absolute;right:-6px;top:50%;transform:translate(100%,-50%) rotate(90deg);transform-origin:0 50%;font:400 11px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:#f6d2cc;white-space:nowrap}
+.vlabel{right:18px;transform:rotate(90deg) translateX(-50%);transform-origin:right top;top:50%}
+.vlabel b{font:italic 400 15px var(--f-display);letter-spacing:0;text-transform:none;color:#efe7da}
+.hcopy{position:relative;z-index:2;max-width:520px;padding-bottom:clamp(140px,22vw,300px)}
+.hcopy h1{font-size:clamp(44px,5.6vw,82px);line-height:.98;margin-top:20px}
+.hcopy h1 i{color:#140c0c}
+.hcopy p{color:#f6d2cc;max-width:38ch;margin:22px 0 30px}
+.hcopy .eyebrow{color:#f6d2cc}
+.hcopy .acts{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.hero2 .hint{position:static;margin-top:34px;color:#140c0c;justify-content:flex-start}
+.hero2 .hint button{color:#f6d2cc;border-color:#ffffff50}
+.hero2 .slap{z-index:4}
+@media (max-width:860px){
+ .hero2{grid-template-columns:1fr;min-height:0;padding-top:0!important}
+ .bleed{position:relative;right:auto;width:calc(100% + 40px);margin-inline:-20px;height:min(110vw,560px)}
+ .bleed img{-webkit-mask-image:linear-gradient(to top,transparent 0,#000 30%);mask-image:linear-gradient(to top,transparent 0,#000 30%);-webkit-mask-composite:source-over;mask-composite:add}
+ .vlabel{right:22px}
+ .hcopy{margin-top:-30px;padding-bottom:120px}
+ .giant{font-size:46vw;bottom:-.16em}
+ .vlabel{display:none}
+ .hero2 .hint{font-size:26px}
+}
+/* originals rail */
+.railnav{display:flex;gap:10px}
+.railnav button{width:52px;height:52px;border:1px solid var(--line);font-size:20px;transition:background .2s,color .2s}
+.railnav button:hover{background:var(--creme);color:var(--ink)}
+.rail{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x proximity;margin-right:calc(50% - 50vw);padding:0 40px 24px 0;scrollbar-width:none;cursor:grab}
+.rail::-webkit-scrollbar{display:none}
+.rail.dragging{cursor:grabbing;scroll-snap-type:none}
+.lot{flex:0 0 auto;scroll-snap-align:start;text-align:left;display:flex;flex-direction:column;gap:14px}
+.lot .pic{height:min(58vh,500px);background:var(--studio);overflow:hidden}
+.lot img{height:100%;width:auto;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.lot:hover img{transform:scale(1.04)}
+.lot .cap{display:flex;gap:14px;align-items:baseline}
+.lot .no{font:400 11px var(--f-body);letter-spacing:.2em;color:var(--red)}
+.lot b{font:italic 400 22px var(--f-display)}
+.lot small{display:block;color:var(--mute);font-size:13px}
+.rbar{height:1px;background:var(--line);margin-top:22px}
+.rbar i{display:block;height:1px;background:var(--creme);width:20%;transition:margin-left .15s linear}
+@media (max-width:600px){.lot .pic{height:62vw}}
+/* hoodie lookbook */
+.look{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.lookimg .shot{aspect-ratio:3/4}
+.lookside h2{font-size:clamp(36px,4.4vw,58px);margin-top:14px}
+.hlist{list-style:none;margin:36px 0 28px;padding:0;counter-reset:h;border-top:1px solid var(--line)}
+.hlist li{border-bottom:1px solid var(--line)}
+.hlist button{width:100%;display:grid;grid-template-columns:44px 1fr auto;align-items:baseline;gap:12px;padding:16px 0;text-align:left;transition:padding .35s cubic-bezier(.3,1.4,.5,1)}
+.hlist .n{font:400 11px var(--f-body);letter-spacing:.2em;color:var(--mute)}
+.hlist .t{font:400 clamp(28px,3.4vw,44px)/1 var(--f-display);transition:color .2s}
+.hlist .pr{color:var(--mute);font-size:14px}
+.hlist button:hover{padding-left:10px}
+.hlist button[aria-pressed="true"] .t{font-style:italic;color:var(--red)}
+.hlist button[aria-pressed="true"] .n{color:var(--red)}
+.lookctl{display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center}
+@media (max-width:860px){.look{grid-template-columns:1fr;gap:32px}}
+/* bands misc */
+.band.red .tier.feat{background:#8e1716;box-shadow:inset 0 2px 0 #140c0c}
+.band.red .tp em{color:#140c0c}
+.band.light .wall{background:#e3d8c7}
+.band.light .wf .frame{border-color:#140c0c}
+.band.light .summary,.band.light .f input,.band.light .f textarea{color:var(--creme)}
+.fword{font:400 clamp(60px,14.5vw,230px)/.82 var(--f-display);letter-spacing:-.03em;color:var(--canvas);white-space:nowrap;text-align:center;margin:56px -20px 0;overflow:hidden}
+/* bundle imagery + selectors */
+.tiers{align-items:start}
+.tier{gap:16px!important}
+.timg{margin:-40px -32px 4px;aspect-ratio:4/3;overflow:hidden;background:#1e1a1b}
+.timg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.tier:hover .timg img{transform:scale(1.04)}
+.tblurb{margin:0;color:var(--mute);font-size:14px}
+.tcust{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tcust summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:14px 0;font:400 12px var(--f-body);letter-spacing:.2em;text-transform:uppercase}
+.tcust summary::-webkit-details-marker{display:none}
+.tcust summary::after{content:"+";font-size:20px;font-weight:300;transition:transform .3s}
+.tcust[open] summary::after{transform:rotate(45deg)}
+.slots{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:14px}
+.slots li{display:flex;flex-direction:column;gap:6px;border:0!important;padding:0!important}
+.slots label{display:flex;justify-content:space-between;font-size:13px;color:var(--mute)}
+.selw{position:relative}
+.selw::after{content:"";position:absolute;right:14px;top:50%;width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.slots select{width:100%;appearance:none;-webkit-appearance:none;background:#0000001f;color:inherit;border:1px solid var(--line);padding:11px 36px 11px 12px;font:300 15px var(--f-body);border-radius:0;cursor:pointer}
+.slots select:focus{outline:1px solid var(--creme);outline-offset:0}
+.slots option{background:#1b1516;color:#efe7da}
+.sel2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fixed{font-size:15px;padding:2px 0}
+.tfr{flex-basis:100%;color:var(--mute);font-size:12px;letter-spacing:.04em}
+.tp{flex-wrap:wrap}
+@media (max-width:900px){.timg{margin:-40px -32px 4px}}
+/* sizes & framing configurator */
+.fcfg{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:stretch}
+.fwall{position:relative;background:#e2d6c4;background-image:radial-gradient(ellipse at 50% 30%,#ece3d4,#d8cab5 80%);min-height:620px;display:grid;place-items:center;padding:48px 24px 64px;overflow:hidden}
+.fpv{transition:width .45s cubic-bezier(.2,.7,.2,1);max-width:100%}
+.fo{padding:clamp(10px,2.4%,20px);box-shadow:0 34px 44px -22px #0009,0 6px 10px -4px #0005}
+.fo.lip .fm{outline:2px solid #c9a25b}
+.fm{background:#f7f5f0;padding:11%;box-shadow:inset 0 0 0 1px #0002}
+.fm.dbl img{box-shadow:0 0 0 6px #141010}
+.fm img,.fu img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.fu{box-shadow:0 24px 30px -18px #0008;background:#fff;padding:3%}
+.fdim{position:absolute;left:0;right:0;bottom:22px;text-align:center;font:400 11px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:#6f6460}
+.fctl{display:flex;flex-direction:column;gap:22px;min-width:0}
+.fctl select{width:100%;appearance:none;-webkit-appearance:none;background:transparent;color:inherit;border:1px solid var(--line);padding:12px 36px 12px 12px;font:300 16px var(--f-body);border-radius:0}
+.flist{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.fl{display:grid;grid-template-columns:22px 1fr auto;align-items:center;gap:10px;padding:9px 10px;border:1px solid var(--line);text-align:left;font-size:13px;line-height:1.25}
+.fl i{width:22px;height:22px;display:block;position:relative}
+.fl i::after{content:"";position:absolute;inset:5px;background:#f7f5f0}
+.fl i.lip::after{box-shadow:0 0 0 1px #c9a25b}
+.fl i.none{border:1px dashed var(--mute)}
+.fl i.none::after{display:none}
+.fl em{font-style:normal;color:var(--mute);font-size:12px}
+.fl[aria-pressed="true"]{border-color:var(--creme);box-shadow:inset 0 0 0 1px var(--creme)}
+.fsum{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px solid var(--line);padding-top:16px;flex-wrap:wrap}
+.fsum span{color:var(--mute);font-size:14px}
+.fsum b{font:400 36px var(--f-display)}
+.fspecs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;margin-top:48px;border-top:1px solid var(--line);padding-top:28px}
+.fspecs b{display:block;font:400 11px var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.fspecs span{color:var(--mute);font-size:14px}
+@media (max-width:900px){.fcfg{grid-template-columns:1fr;gap:28px}.fwall{min-height:0;aspect-ratio:4/5;padding:28px 16px 48px}.fspecs{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.flist{grid-template-columns:1fr}.fspecs{grid-template-columns:1fr}}
+/* wholesale */
+.whs{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+.whs h2{font-size:clamp(36px,4.6vw,60px);margin-top:14px}
+.whs h2 i{color:#140c0c}
+.whs>div>p{color:var(--mute);max-width:46ch;margin:18px 0 26px}
+.whl{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.whl li{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.whl b{font:400 11px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);padding-top:3px}
+.whl a{color:inherit}
+.wform .f input,.wform .f textarea,.wform select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--creme);padding:10px 0;font:300 16px var(--f-body);border-radius:0;appearance:none;-webkit-appearance:none}
+.wform select{border:1px solid var(--line);padding:11px 36px 11px 12px}
+.wform select option{background:#8e1716;color:#efe7da}
+.wform input::placeholder,.wform textarea::placeholder{color:#f6d2cc99}
+.wform .f input:focus,.wform .f textarea:focus{outline:0;border-color:var(--creme)}
+.w2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.wdone h3{font:italic 400 40px var(--f-display)}
+.wdone p{color:var(--mute)}
+.lookctl .link{font-size:11px}
+@media (max-width:860px){.whs{grid-template-columns:1fr;gap:36px}.w2{grid-template-columns:1fr}}
+/* faq / policies / contact */
+.help{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start}
+.help h2,.contact h2{font-size:clamp(36px,4.6vw,60px);margin-top:14px}
+.hside{color:var(--mute);margin-top:18px;max-width:34ch}
+.hside a,.pol a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.qas{border-top:1px solid var(--line)}
+.qa{border-bottom:1px solid var(--line)}
+.qa summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font:400 clamp(19px,1.9vw,23px)/1.3 var(--f-display)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";flex:none;font:300 26px/1 var(--f-body);color:var(--red);transition:transform .3s}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa p{margin:0 0 22px;color:var(--mute);max-width:62ch}
+.pol{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.pol h3{font-size:30px;font-style:italic;margin-bottom:16px}
+.pol ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.pol li{padding:14px 0;border-bottom:1px solid var(--line);color:var(--mute);font-size:15px}
+.pol li b{color:var(--creme);font-weight:400}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.contact p{color:var(--mute);max-width:44ch;margin-top:18px}
+.cbox{display:flex;flex-direction:column;gap:14px;border:1px solid var(--line);padding:32px}
+.cmail{font:400 clamp(24px,3.2vw,40px)/1.15 var(--f-display);color:var(--creme);text-decoration:none;word-break:break-all;user-select:all}
+.cmail:hover{text-decoration:underline;text-underline-offset:6px}
+.cacts{display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:860px){.help,.pol,.contact{grid-template-columns:1fr;gap:32px}.cbox{padding:22px}}
+/* newsletter pop-up */
+.pop{position:fixed;inset:0;z-index:45;background:#000a;display:grid;grid-template-columns:minmax(0,460px);justify-content:center;align-content:center;padding:20px;animation:popfade .35s ease}
+.popc{position:relative;width:100%;min-width:0;background:#a51d1b;color:#efe7da;padding:44px 34px 34px;box-shadow:0 40px 80px -30px #000;animation:poprise .5s cubic-bezier(.2,.8,.2,1)}
+.popc h3{font:400 clamp(32px,6vw,42px)/1.05 var(--f-display);margin:12px 0 12px}
+.popc h3 i{color:#140c0c}
+.popc p{margin:0 0 20px;color:#f6d2cc;font-size:15px}
+.pops{position:absolute;right:-18px;top:-34px;width:96px;transform:rotate(12deg);filter:drop-shadow(0 10px 14px #0008)}
+.popx{position:absolute;top:10px;left:12px;width:36px;height:36px;font-size:18px;color:#efe7da}
+#popForm{display:flex;gap:0;border:1px solid #ffffff70}
+#popForm input{flex:1;min-width:0;background:transparent;border:0;color:#efe7da;padding:14px;font:300 16px var(--f-body)}
+#popForm input::placeholder{color:#f6d2ccaa}
+#popForm input:focus{outline:0}
+#popForm .btn{background:#140c0c;border-color:#140c0c;color:#efe7da;padding:14px 20px}
+.popok{margin:14px 0 0!important;color:#efe7da!important}
+.vh{position:absolute;left:-9999px}
+@media (max-width:480px){.popc{padding:40px 22px 24px}#popForm{flex-direction:column}#popForm .btn{width:100%}.pops{width:76px;right:-6px;top:-28px}}
+@keyframes popfade{from{opacity:0}}
+@keyframes poprise{from{opacity:0;transform:translateY(24px) scale(.97)}}
+/* commission media */
+.media{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.media div{border-top:2px solid var(--red);padding-top:12px}
+.media b{display:block;font:italic 400 20px var(--f-display);margin-bottom:6px}
+.media span{color:var(--mute);font-size:13px;line-height:1.5}
+@media (max-width:600px){.media{grid-template-columns:1fr}}
+/* framing */
+.frow{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+.fpick{text-align:left;display:flex;flex-direction:column;gap:12px}
+.fpick .fr{aspect-ratio:4/5;padding:7%;box-shadow:0 22px 34px -18px #000;transition:transform .35s ease,box-shadow .35s ease;backface-visibility:hidden;transform:translateZ(0)}
+.fpick .fr .mt{width:100%;height:100%;background:#f7f5f0;padding:12%;box-shadow:inset 0 0 0 1px #0002}
+.fpick .fr.lip .mt{outline:2px solid #c9a25b;outline-offset:0}
+.fpick .fr img{width:100%;height:100%;object-fit:cover;display:block}
+@media (hover:hover){.fpick:hover .fr{transform:translateY(-6px) translateZ(0);box-shadow:0 30px 40px -18px #000}}
+.fpick b{font:italic 400 18px/1.15 var(--f-display)}
+.fpick small{color:var(--mute);font-size:13px}
+.fspecs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;margin-top:56px;border-top:1px solid var(--line);padding-top:28px}
+.fspecs b{display:block;font:400 11px var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.fspecs span{color:var(--mute);font-size:14px}
+@media (max-width:900px){.frow{grid-template-columns:repeat(3,1fr)}.fspecs{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.frow{grid-template-columns:1fr 1fr;gap:18px}}
+.fsw{display:flex;gap:8px;flex-wrap:wrap}
+.fsw button{width:40px;height:40px;padding:4px;border:1px solid var(--line)}
+.fsw button[aria-pressed="true"]{border-color:var(--creme);outline:1px solid var(--creme)}
+.fsw i{display:block;width:100%;height:100%;box-shadow:inset 0 0 0 7px #0000;position:relative}
+.fsw i::after{content:"";position:absolute;inset:7px;background:#f7f5f0}
+.fsw i.lip::after{box-shadow:0 0 0 1px #c9a25b}
+.fsw i.none{background:repeating-linear-gradient(45deg,var(--line) 0 2px,transparent 2px 6px)}
+.fsw i.none::after{display:none}
+.fnote{display:block;color:var(--mute);font-size:12px;margin-top:8px}
+.dlg .art .mat{transition:border-color .3s,padding .3s}
+.dlg .art .mat.framed .matin{background:#f7f5f0;padding:9%}
+.dlg .art .matin.dbl img{box-shadow:0 0 0 7px #111}
+.dlg .art .matin.lip{outline:2px solid #c9a25b}
+/* colouring book */
+.bookph{display:grid!important;place-items:center}
+.bookph .bk{position:relative;width:62%;aspect-ratio:1414/2000;box-shadow:-2px 0 0 #fff8 inset,0 26px 40px -16px #000;transform:rotate(-3deg);transition:transform .5s cubic-bezier(.3,1.5,.5,1);border-radius:2px 6px 6px 2px;overflow:hidden}
+.bookph .bk::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7%;background:linear-gradient(90deg,#0006,#0000);z-index:1}
+.bookph img{position:static!important;width:100%;height:100%;object-fit:cover;display:block}
+.bookph .kitph{position:absolute!important;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}
+.card.t-book:hover .kitph{opacity:1}
+.kittag{position:absolute;left:12px;bottom:12px;z-index:2;background:#0c0a0ad9;color:#efe7da;padding:7px 11px;font:400 10px var(--f-body);letter-spacing:.18em;text-transform:uppercase}
+.flip .leaf.photo{width:100%;aspect-ratio:auto}
+.flip:has(.leaf.photo){padding:5% 4% 12%}
+.flip{display:grid!important;place-items:center;padding:7% 12% 12%;perspective:1200px}
+.flip .leaf{width:min(100%,380px);aspect-ratio:1414/2000;background:#fff;box-shadow:0 30px 50px -20px #000;overflow:hidden}
+.flip .leaf.photo{aspect-ratio:auto}
+.flip .leaf img{position:static!important;width:100%;height:100%;object-fit:cover;display:block}
+.flip .arw{opacity:.9}
+.pgno{position:absolute;left:0;right:0;bottom:16px;text-align:center;font:400 11px var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.pthumbs{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.pthumbs button{flex:0 0 40px;aspect-ratio:1414/2000;border:1px solid var(--line);overflow:hidden;background:#fff}
+.pthumbs button[aria-pressed="true"]{border-color:var(--creme);outline:1px solid var(--creme)}
+.pthumbs img{width:100%;height:100%;object-fit:cover;display:block}
+/* postcards */
+.cardph{background:var(--studio)}
+.cardph .cb,.cardph .cf{position:absolute;width:54%;aspect-ratio:2/3;background:#fff;box-shadow:0 18px 30px -14px #000c;transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+.cardph img{position:static!important;width:100%;height:100%;object-fit:cover;display:block}
+.cardph .cb{left:12%;top:13%;transform:rotate(-8deg)}
+.cardph .cf{right:12%;bottom:12%;transform:rotate(5deg)}
+.card.t-card:hover .cb{transform:rotate(-13deg) translateX(-6%)}
+.card.t-card:hover .cf{transform:rotate(8deg) translateX(6%)}
+.carddlg{display:grid!important;place-items:center;padding:8%}
+.carddlg .cb,.carddlg .cf{position:relative;width:min(78%,360px);aspect-ratio:2/3;background:#fff;box-shadow:0 30px 50px -20px #000}
+.carddlg img{position:static!important;width:100%;height:100%;object-fit:cover;display:block}
+/* magnifier */
+.zoomwrap{position:relative;min-width:0}
+.zoomwrap .shot{cursor:zoom-in}
+.lens{position:absolute;z-index:5;width:190px;height:190px;border-radius:50%;pointer-events:none;border:3px solid var(--creme);box-shadow:0 18px 40px -10px #000,inset 0 0 0 1px #0004;background-repeat:no-repeat;background-color:var(--studio);transform:scale(.6);opacity:0;transition:transform .25s cubic-bezier(.3,1.6,.5,1),opacity .15s}
+.lens.on{transform:scale(1);opacity:1}
+.lens::after{content:"";position:absolute;right:-30px;bottom:-30px;width:44px;height:12px;background:var(--creme);border-radius:6px;transform:rotate(45deg);box-shadow:0 6px 10px #0008}
+.zhint{position:absolute;left:14px;bottom:14px;z-index:4;display:flex;align-items:center;gap:8px;background:#0c0a0ad9;padding:8px 12px;font:400 11px var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--creme);pointer-events:none;transition:opacity .3s}
+.zhint svg{width:14px;height:14px}
+.zoomwrap.zooming .zhint,.zoomwrap.zooming .arw{opacity:0}
+@media (max-width:760px){.lens{width:150px;height:150px}}
+/* in person */
+.irl{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center}
+.snaps{position:relative;min-height:520px}
+.snap{position:absolute;background:var(--creme);padding:12px 12px 44px;box-shadow:0 30px 50px -24px #000;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.snap img{display:block;width:100%;height:100%;object-fit:cover}
+.snap span{position:absolute;left:0;right:0;bottom:10px;text-align:center;font:400 26px/1 var(--f-sig);color:var(--ink)}
+.snap::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;margin-left:-42px;background:#efe7da99;transform:rotate(-3deg);backdrop-filter:blur(1px)}
+.snap.a{left:0;top:30px;width:62%;aspect-ratio:4/3.3;transform:rotate(-3deg)}
+.snap.b{right:2%;top:0;width:36%;aspect-ratio:3/4.6;transform:rotate(4deg)}
+.snap:hover{transform:rotate(0) scale(1.03);z-index:2}
+.irl p{color:var(--mute);margin:18px 0 26px;max-width:42ch}
+@media (max-width:860px){.irl{grid-template-columns:1fr;gap:32px}.snaps{min-height:0;display:grid;grid-template-columns:1.4fr 1fr;gap:14px;align-items:start}.snap{position:relative;left:auto!important;right:auto!important;top:auto!important;width:auto!important;padding:8px 8px 34px}.snap span{font-size:20px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="announce">Free shipping on orders over $75 CAD &nbsp;·&nbsp; Commissions now open</div>
+
+<header>
+  <div class="bar">
+    <nav class="l" aria-label="Shop">
+      <a href="#originals">Originals</a>
+      <a href="#collection">Hoodies</a>
+      <a href="#shop" data-jump="print">Prints</a>
+    </nav>
+    <a class="word" href="#top">Riri Studios</a>
+    <nav class="r" aria-label="Studio">
+      <a href="#bundles">Bundles</a>
+      <a href="#framing">Framing</a>
+      <a href="#commissions">Commissions</a>
+      <a href="#" id="openCart" aria-label="Open cart">Bag (<span id="count" class="num">0</span>)</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <section class="band red hero2">
+    <div class="giant" aria-hidden="true">RIRI</div>
+    <figure class="bleed" style="margin:0">
+      <img data-img="pt_snake" alt="Riri's painting Original Sin: a woman with long dark hair wrapped in a golden snake, on a red ground">
+      <figcaption class="vlabel"><b>Original Sin</b> · acrylic on canvas</figcaption>
+    </figure>
+    <div class="hcopy">
+      <div class="eyebrow">Riri Studios · hand-painted in Ontario</div>
+      <h1>Surreal vision,<br><i>designed reality.</i></h1>
+      <p>Femme fatales, fangs, snakes and spiders, painted by hand and made into hoodies, fine art prints and stickers.</p>
+      <div class="acts">
+        <a class="btn" href="#collection">Shop hoodies</a>
+        <a class="link" href="#originals">See the paintings</a>
+      </div>
+      <div class="hint">go on, peel a sticker off <button type="button" id="reslap">Restick</button></div>
+    </div>
+    <div class="slap" id="slap" aria-hidden="true"></div>
+  </section>
+
+  <section id="originals" class="band">
+    <div class="head">
+      <div><div class="eyebrow">The originals · 10 paintings</div><h2>Every design begins <i>on canvas</i></h2></div>
+      <div class="railnav"><button type="button" id="rprev" aria-label="Previous paintings">←</button><button type="button" id="rnext" aria-label="Next paintings">→</button></div>
+    </div>
+    <div class="rail" id="origs"></div>
+    <div class="rbar"><i id="rprog"></i></div>
+  </section>
+
+  <section id="collection" class="band light">
+    <div class="look">
+      <div class="lookimg" id="lookimg"></div>
+      <div class="lookside">
+        <div class="eyebrow">The hoodie collection · $120 · M, L &amp; XL</div>
+        <h2>Worn like <i>a gallery piece</i></h2>
+        <ol class="hlist" id="hlist"></ol>
+        <div class="lookctl" id="lookctl"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" class="band">
+    <div class="head"><div><div class="eyebrow">The shop</div><h2>Prints, stickers <i>&amp; keepsakes</i></h2></div></div>
+    <div class="tabs" id="tabs"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="bundles" class="band red">
+    <div class="head">
+      <div><div class="eyebrow">Bundles</div><h2>Collect <i>the set</i></h2></div>
+      <p>Three curated sets. Open "Choose your designs" to pick every print, sticker, card and hoodie, and add a frame to any print.</p>
+    </div>
+    <div class="tiers" id="tiers"></div>
+  </section>
+
+  <section id="framing" class="band light"><span id="sizes"></span>
+    <div class="head">
+      <div><div class="eyebrow">Print sizes &amp; framing</div><h2>Framed &amp; <i>ready to hang</i></h2></div>
+      <p>Every print comes in three standard sizes. Add a real-wood frame and it arrives matted, glazed and wired, ready for the wall.</p>
+    </div>
+    <div class="fcfg">
+      <div class="fwall"><div class="fpv" id="fpv"></div><div class="fdim num" id="fdim"></div></div>
+      <div class="fctl">
+        <div class="f"><label for="fpaint">Painting</label><div class="selw"><select id="fpaint"></select></div></div>
+        <div class="f"><label>Print size</label><div class="opts" id="fsize"></div></div>
+        <div class="f"><label>Frame</label><div class="flist" id="fframes"></div></div>
+        <div class="f" id="fmatw"><label>Mat</label><div class="opts" id="fmat"></div></div>
+        <div class="fsum num" id="fsum"></div>
+        <button class="btn" id="fadd" type="button">Add to bag</button>
+      </div>
+    </div>
+    <div class="fspecs">
+      <div><b>Paper</b><span>Cold Press Bright: Italian 100% cotton rag, 305 gsm, watercolour-paper texture, bright white, acid-free.</span></div>
+      <div><b>Sizes</b><span>8×10, 11×14 and 16×20 fit standard store-bought frames too, if you'd rather frame it yourself.</span></div>
+      <div><b>Mat</b><span>2" crystal white, or a double mat with a ¼" black accent. Acid-free, so the colour stays true.</span></div>
+      <div><b>Glazing</b><span>Clear framing acrylic: lighter than glass and won't shatter in the mail.</span></div>
+      <div><b>Finishing</b><span>Acid-free backing paper and hanging wire installed.</span></div>
+    </div>
+  </section>
+
+  <section id="irl" class="band"><div class="irl">
+    <div class="snaps">
+      <figure class="snap a" style="margin:0"><img data-img="ph_table" alt="Riri Studios market table with prints, stickers, colouring kits and mystery bags" loading="lazy"><span>market day</span></figure>
+      <figure class="snap b" style="margin:0"><img data-img="ph_store" alt="Riri Studios display rack of prints and stickers on a red wall in a shop" loading="lazy"><span>on the shelf</span></figure>
+    </div>
+    <div>
+      <div class="eyebrow">In real life</div>
+      <h2 style="font-size:clamp(36px,4.6vw,60px);margin-top:14px">Come find us <i style="color:var(--mute)">in person</i></h2>
+      <p>Riri Studios pops up at markets and on the shelves of local shops around Ontario. Prints, stickers, colouring kits and mystery bags, all in one very red corner.</p>
+      <a class="btn ghost" href="https://www.instagram.com/riristudios_/" target="_blank" rel="noopener">See where we'll be next</a>
+    </div>
+  </div></section>
+
+  <section id="commissions" class="band light">
+    <div class="comm">
+      <div>
+        <div class="eyebrow">Commissions &amp; originals</div>
+        <h2 style="font-size:clamp(36px,4.6vw,60px);margin-top:14px">Your idea, <i style="color:var(--mute)">in Riri's hand</i></h2>
+        <p style="margin-top:20px;max-width:46ch">Commissions are priced at $1.50 per square inch. Original paintings are listed individually as they become available.</p>
+        <div class="media">
+          <div><b>Acrylic paint</b><span>Bold, glossy colour on canvas. The medium behind Original Sin and D.N.D.</span></div>
+          <div><b>Oil pastel</b><span>Rich, textured layers on paper, like Safe Haven and Fragile.</span></div>
+          <div><b>Charcoal</b><span>Moody, smudged depth, alone or mixed with paint, like Devotion in Red.</span></div>
+        </div>
+        <ol class="steps">
+          <li><span>i.</span><div>Choose a medium and size, and tell Riri what you'd like painted.</div></li>
+          <li><span>ii.</span><div>Riri confirms the details and sends an invoice for a deposit.</div></li>
+          <li><span>iii.</span><div>Your painting is made, photographed for your approval, and shipped.</div></li>
+        </ol>
+      </div>
+      <div class="form">
+        <div class="f"><label>Medium</label><div class="presets" id="cmed"><button type="button" class="o" data-med="Acrylic paint" aria-pressed="true">Acrylic paint</button><button type="button" class="o" data-med="Oil pastel" aria-pressed="false">Oil pastel</button><button type="button" class="o" data-med="Charcoal" aria-pressed="false">Charcoal</button></div></div>
+        <div class="f"><label>Canvas size</label><div class="presets" id="presets"></div></div>
+        <div class="calc">
+          <div class="f"><label for="cw">Width (in)</label><input id="cw" type="number" min="4" max="60" value="16"></div>
+          <span style="padding-bottom:12px;color:var(--mute)">×</span>
+          <div class="f"><label for="ch">Height (in)</label><input id="ch" type="number" min="4" max="60" value="20"></div>
+        </div>
+        <div class="quote"><span class="num" id="qmath"></span><b class="num" id="qtotal"></b></div>
+        <form id="cform" class="form" name="commission" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+          <input type="hidden" name="form-name" value="commission"><p hidden><label>Leave empty <input name="bot-field"></label></p>
+          <input type="hidden" name="medium" id="h_medium"><input type="hidden" name="size" id="h_size"><input type="hidden" name="quote" id="h_quote">
+          <div class="f"><label for="cname">Name</label><input id="cname" name="name" required></div>
+          <div class="f"><label for="cmail">Email</label><input id="cmail" name="email" type="email" required></div>
+          <div class="f"><label for="cidea">Your message</label><textarea id="cidea" name="message" placeholder="What you'd like painted: subject, mood, colours, references" required></textarea></div>
+          <div class="f"><label for="cref">Reference photos (optional)</label><input id="cref" name="references" type="file" accept="image/*"></div>
+          <div><button class="btn" type="submit">Request commission</button></div>
+        </form>
+        <div id="creq" hidden class="form">
+          <p style="color:var(--creme)">Request sent.</p>
+          <pre class="summary" id="csum"></pre>
+          <div><button class="btn ghost" id="ccopy" type="button">Copy request</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="wholesale" class="band red">
+    <div class="whs">
+      <div>
+        <div class="eyebrow">Wholesale</div>
+        <h2>Want to order <i>in bulk?</i></h2>
+        <p>Carry RIRI Studios hoodies in your shop, boutique or market stall. Tell us which designs, colours and sizes you're after and roughly how many, and Arianna will reply with wholesale pricing, minimums and timing.</p>
+        <ul class="whl">
+          <li><b>Designs</b><span>Love Bite, Original Sin, D.N.D, Kiss You Later</span></li>
+          <li><b>Colours</b><span>Creme or black</span></li>
+          <li><b>Sizes</b><span>M, L and XL</span></li>
+          <li><b>Questions</b><span><a href="mailto:Arianna@riristudios.com">Arianna@riristudios.com</a></span></li>
+        </ul>
+      </div>
+      <form id="wform" class="form wform" name="wholesale" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="wholesale"><p hidden><label>Leave empty <input name="bot-field"></label></p>
+        <div class="w2">
+          <div class="f"><label for="wbiz">Business or shop name</label><input id="wbiz" name="business" required></div>
+          <div class="f"><label for="wname">Your name</label><input id="wname" name="name" required></div>
+        </div>
+        <div class="w2">
+          <div class="f"><label for="wmail">Email</label><input id="wmail" name="email" type="email" required></div>
+          <div class="f"><label for="wsite">Website or Instagram</label><input id="wsite" name="website" placeholder="@yourshop"></div>
+        </div>
+        <div class="f"><label for="wqty">Roughly how many hoodies?</label><div class="selw"><select id="wqty" name="quantity"><option>10 to 24</option><option>25 to 49</option><option>50 to 99</option><option>100+</option><option>Not sure yet</option></select></div></div>
+        <div class="f"><label for="wmsg">Designs, colours and sizes</label><textarea id="wmsg" name="details" placeholder="e.g. 12 Love Bite in black (4 M, 4 L, 4 XL), 12 Original Sin in creme…" required></textarea></div>
+        <div><button class="btn" type="submit">Request wholesale pricing</button></div>
+      </form>
+      <div id="wdone" class="wdone" hidden><h3>Thank you.</h3><p id="wdonetxt"></p></div>
+    </div>
+  </section>
+
+  <section id="faq" class="band">
+    <div class="help">
+      <div><div class="eyebrow">Questions</div><h2>Good to <i>know</i></h2><p class="hside">Can't find your answer? Email <a href="mailto:Arianna@riristudios.com">Arianna@riristudios.com</a>.</p></div>
+      <div class="qas"><details class="qa"><summary>When will my order ship?</summary><p>Prints, stickers and cards are packed by hand and ship within 3 to 5 business days. Framed prints and hoodies take a little longer. You'll get an email with tracking as soon as your order is on its way.</p></details><details class="qa"><summary>Where do you ship?</summary><p>Anywhere in Canada and the United States. Shipping is a flat rate at checkout, and free on orders over $75 CAD.</p></details><details class="qa"><summary>What sizes do the prints come in?</summary><p>8 × 10, 11 × 14 and 16 × 20 inches, printed on Cold Press Bright fine art paper and signed by Riri. All three fit standard store-bought frames, or you can add a real-wood frame at checkout.</p></details><details class="qa"><summary>What paper do you print on?</summary><p>Every print is on Cold Press Bright: a 100% cotton rag fine art paper made in Italy. It's heavyweight at 305 gsm, with a textured matte surface like watercolour paper and a bright white base (96 ISO brightness), so colours stay vivid and true to the paintings. It's acid-free and pH buffered, so it's made to last.</p></details><details class="qa"><summary>What comes with a framed print?</summary><p>A real-wood frame, a 2" crystal white mat (or a double mat with a ¼" black accent), clear acrylic glazing that won't shatter in the mail, acid-free backing and hanging wire. It arrives ready to hang.</p></details><details class="qa"><summary>What are the postcards like?</summary><p>They're 4 × 6 inch matte postcards with one of Riri's paintings on the front and the RIRI Studios logo on the back. Pick any of the 10 paintings.</p></details><details class="qa"><summary>What's in the colouring kit?</summary><p>The Handle With Care & Femme Fatale mini colouring book: 8 of Riri's designs to colour, plus blank pages if you feel inspired to draw your own. It comes with a 12-pack of pre-sharpened pencil crayons.</p></details><details class="qa"><summary>What size are the hoodies?</summary><p>Hoodies come in M, L and XL with a relaxed, oversized fit. If you're between sizes or want exact measurements, email us before you order.</p></details><details class="qa"><summary>Are the stickers waterproof?</summary><p>They're die-cut vinyl: durable and weatherproof, made for laptops, water bottles and phone cases.</p></details><details class="qa"><summary>How do commissions work?</summary><p>Choose acrylic paint, oil pastel or charcoal and a size, then send your idea through the commission form. Pricing is $1.50 per square inch. Riri confirms the details and sends an invoice for a deposit, then shares a photo of the finished piece for your approval before it ships.</p></details><details class="qa"><summary>Can I buy an original painting?</summary><p>Some originals are available. Open any painting in the Originals section and tap "Ask about the original", or email us.</p></details><details class="qa"><summary>Can I buy hoodies wholesale for my shop?</summary><p>Yes. Fill in the wholesale form with the designs, colours, sizes and roughly how many you need, and Arianna will send pricing, minimums and timing.</p></details><details class="qa"><summary>How do I pay?</summary><p>Checkout is handled by Stripe, so your card details never touch our site. All major credit cards are accepted. Prices are in Canadian dollars.</p></details><details class="qa"><summary>Where can I find you in person?</summary><p>Riri Studios pops up at markets and in local shops around Ontario. Follow @riristudios_ on Instagram to see where we'll be next.</p></details></div>
+    </div>
+  </section>
+
+  <section id="shipping" class="band light">
+    <div class="head"><div><div class="eyebrow">Policies</div><h2>Shipping &amp; <i>returns</i></h2></div><p>Every order is packed by hand in Ontario. Here's what to expect.</p></div>
+    <div class="pol">
+      <div>
+        <h3>Shipping</h3>
+        <ul>
+          <li><b>Where:</b> Canada and the United States.</li>
+          <li><b>Cost:</b> a flat rate shown at checkout. Free on orders over $75 CAD.</li>
+          <li><b>When:</b> prints, stickers and cards ship within 3 to 5 business days. Framed prints and hoodies take a little longer.</li>
+          <li><b>Packing:</b> prints ship flat with a backing board in a rigid mailer; framed prints ship with corner protectors in a padded box.</li>
+          <li><b>Tracking:</b> you'll get a tracking email as soon as your order ships.</li>
+          <li><b>Framed prints:</b> are printed and framed by our framing partner and ship straight from their studio, so they arrive in a separate package from the rest of your order.</li>
+          <li><b>Duties:</b> US orders may be charged duties or import fees by the carrier. These are the buyer's responsibility.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Returns &amp; exchanges</h3>
+        <ul>
+          <li><b>14 days:</b> unused prints, stickers, cards, colouring kits and hoodies can be returned within 14 days of delivery, in their original packaging.</li>
+          <li><b>Final sale:</b> framed prints, commissions, original paintings, mystery packs and bundles.</li>
+          <li><b>How:</b> email <a href="mailto:Arianna@riristudios.com">Arianna@riristudios.com</a> with your order number. Return shipping is paid by the customer; refunds go back to your original payment within 5 to 7 business days of the item arriving.</li>
+          <li><b>Exchanges:</b> need a different hoodie size? Email us and we'll swap it if it's in stock.</li>
+          <li><b>Damaged or wrong item:</b> email a photo within 7 days of delivery and we'll replace it or refund you, no return needed.</li>
+          <li><b>Lost package:</b> if tracking hasn't moved in 10 business days, email us and we'll sort it out with the carrier.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="band red">
+    <div class="contact">
+      <div><div class="eyebrow">Contact</div><h2>Say <i>hello</i></h2><p>Questions about an order, a commission, wholesale or a market? Arianna reads every email and replies within 2 business days.</p></div>
+      <div class="cbox">
+        <span class="eyebrow">Email</span>
+        <a class="cmail" id="cmailtxt" href="mailto:Arianna@riristudios.com">Arianna@riristudios.com</a>
+        <div class="cacts"><button class="btn" type="button" id="copyMail">Copy email</button><a class="btn ghost" href="https://www.instagram.com/riristudios_/" target="_blank" rel="noopener">Instagram @riristudios_</a></div>
+        <span class="eyebrow" style="margin-top:8px">Based in Ontario, Canada</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="fin">
+    <div>
+      <div class="word">Riri Studios</div>
+      <p>Surreal Vision, Designed Reality.</p>
+      <form class="news" id="news"><label for="nmail" class="eyebrow" style="position:absolute;left:-9999px">Email</label><input id="nmail" type="email" placeholder="Email for new drops" required><button type="submit">Join</button></form>
+      <p id="newsOk" hidden style="color:var(--creme)">You're on the list.</p>
+    </div>
+    <div><h4>Shop</h4><ul><li><a href="#collection">Hoodies</a></li><li><a href="#shop" data-jump="print">Prints</a></li><li><a href="#shop" data-jump="sticker">Stickers</a></li><li><a href="#bundles">Bundles</a></li></ul></div>
+    <div><h4>Studio</h4><ul><li><a href="#commissions">Commissions</a></li><li><a href="#wholesale">Wholesale</a></li><li><a href="https://www.instagram.com/riristudios_/" target="_blank" rel="noopener">Instagram @riristudios_</a></li><li><a href="#shipping">Shipping &amp; returns</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li><li><a href="mailto:Arianna@riristudios.com">Arianna@riristudios.com</a></li></ul></div>
+  </div>
+  <div class="fword" aria-hidden="true">RIRI STUDIOS</div>
+  <div class="legal"><span>© 2026 Riri Studios</span><span>Prices in CAD</span></div>
+</footer>
+
+<div class="scrim" id="scrim" hidden>
+  <div class="dlgwrap"><button class="x" id="closeDlg" aria-label="Close">✕</button><div class="dlg" id="dlg" role="dialog" aria-modal="true"></div></div>
+</div>
+
+<div class="pop" id="pop" hidden role="dialog" aria-modal="true" aria-labelledby="popT">
+  <div class="popc">
+    <button class="popx" id="popX" type="button" aria-label="Close">✕</button>
+    <img class="pops" src="img/sk_heart.webp" alt="">
+    <div class="eyebrow" style="color:#f6d2cc">Riri Studios newsletter</div>
+    <h3 id="popT">Subscribe for <i>the latest drops</i></h3>
+    <p>New prints, hoodie restocks and market dates, before anyone else. No spam, unsubscribe anytime.</p>
+    <form id="popForm"><label for="popMail" class="vh">Email</label><input id="popMail" type="email" placeholder="Your email" required><button class="btn" type="submit">Subscribe</button></form>
+    <p class="popok" id="popOk" hidden></p>
+  </div>
+</div>
+
+<aside class="drawer" id="drawer" aria-label="Bag">
+  <div style="display:flex;justify-content:space-between;align-items:center"><h3>Your bag</h3><button class="x" style="position:static;background:none" id="closeCart" aria-label="Close bag">✕</button></div>
+  <div class="ship" id="ship"></div>
+  <div class="lines" id="lines"></div>
+  <div class="tot"><span>Subtotal</span><span class="num" id="sub">$0</span></div>
+  <div class="conote" id="coNote" hidden></div>
+  <p class="ship" style="margin:0">Secure checkout by Stripe. Shipping is added at checkout; free over $75.</p>
+  <button class="btn" id="checkout" style="width:100%">Checkout</button>
+</aside>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const IMG={creme_front:"img/creme_front.jpg",creme_lighter:"img/creme_lighter.jpg",creme_snake:"img/creme_snake.jpg",creme_pinup:"img/creme_pinup.jpg",creme_lips:"img/creme_lips.jpg",black_front:"img/black_front.jpg",black_snake:"img/black_snake.jpg",black_lighter:"img/black_lighter.jpg",black_lips:"img/black_lips.jpg",black_pinup:"img/black_pinup.jpg",pt_snake:"img/pt_snake.jpg",pt_platinum:"img/pt_platinum.jpg",pt_little:"img/pt_little.jpg",pt_house:"img/pt_house.jpg",pt_pinup:"img/pt_pinup.jpg",pt_lilac:"img/pt_lilac.jpg",pt_hotline:"img/pt_hotline.jpg",pt_smoke:"img/pt_smoke.jpg",pt_stares:"img/pt_stares.jpg",pt_fragile:"img/pt_fragile.jpg",card_back:"img/card_back.jpg",bd_large:"img/bd_large.jpg",bd_medium:"img/bd_medium.jpg",bd_small:"img/bd_small.jpg",cb_back:"img/cb_back.jpg",cb_front:"img/cb_front.jpg",cb_p1:"img/cb_p1.jpg",cb_p2:"img/cb_p2.jpg",cb_p3:"img/cb_p3.jpg",cb_p4:"img/cb_p4.jpg",cb_p5:"img/cb_p5.jpg",cb_p6:"img/cb_p6.jpg",cb_p7:"img/cb_p7.jpg",cb_p8:"img/cb_p8.jpg",cb_thanks:"img/cb_thanks.jpg",st_hwc:"img/st_hwc.jpg",st_ff:"img/st_ff.jpg",st_platinum:"img/st_platinum.jpg",st_lilac:"img/st_lilac.jpg",st_stares:"img/st_stares.jpg",sk_platinum:"img/sk_platinum.webp",sk_lilac:"img/sk_lilac.webp",sk_stares:"img/sk_stares.webp",ph_kit:"img/ph_kit.jpg",ph_mystery:"img/ph_mystery.jpg",ph_table:"img/ph_table.jpg",ph_store:"img/ph_store.jpg",sk_snake:"img/sk_snake.webp",sk_eye:"img/sk_eye.webp",sk_bear:"img/sk_bear.webp",sk_logo:"img/sk_logo.webp",sk_heart:"img/sk_heart.webp",sk_house:"img/sk_house.webp",sk_red:"img/sk_red.webp",sk_jar:"img/sk_jar.webp",sk_dnd:"img/sk_dnd.webp",sk_pinup:"img/sk_pinup.webp",sk_melt:"img/sk_melt.webp",st_snake:"img/st_snake.jpg",st_eye:"img/st_eye.jpg",st_bear:"img/st_bear.jpg",st_logo:"img/st_logo.jpg",st_heart:"img/st_heart.jpg",st_house:"img/st_house.jpg",st_red:"img/st_red.jpg",st_jar:"img/st_jar.jpg",st_dnd:"img/st_dnd.jpg",st_pinup:"img/st_pinup.jpg",st_melt:"img/st_melt.jpg",st_pack3:"img/st_pack3.jpg",st_pack7:"img/st_pack7.jpg"};
+document.querySelectorAll("[data-img]").forEach(i=>i.src=IMG[i.dataset.img]);;
+const fmt=n=>"$"+(Number.isInteger(n)?n:n.toFixed(2));
+const $=s=>document.querySelector(s);
+
+/* hoodies: Riri's photos, working names */
+const HS=["M","L","XL"];
+const SW={Creme:"#efe4cf",Black:"#111"};
+const hoodies=[
+ {id:"h1",name:"Love Bite",cols:{Creme:"creme_lips",Black:"black_lips"},desc:"Glossy red lips, fangs and a spider on the tongue, printed large across the back. Signature and tagline on the chest."},
+ {id:"h2",name:"Original Sin",cols:{Creme:"creme_snake",Black:"black_snake"},desc:"A dark-haired beauty wrapped in a golden snake, painted in flame orange and violet."},
+ {id:"h3",name:"D.N.D",cols:{Creme:"creme_lighter",Black:"black_lighter"},desc:"Orange curls, glasses low on her nose, flip phone in one hand and a cigarette in the other."},
+ {id:"h4",name:"Kiss You Later",cols:{Creme:"creme_pinup",Black:"black_pinup"},desc:"A kneeling pin-up in a white corset, in Riri's glossy brushwork."}
+];
+/* every hoodie shares the signature chest print on the front */
+const FRONT={Creme:"creme_front",Black:"black_front"};
+const SIDES=["Back","Front"];
+const views=(h,c)=>[h.cols[c],FRONT[c]];
+const hs={},hv={};hoodies.forEach(h=>{hs[h.id]=Object.keys(h.cols)[0];hv[h.id]=0});
+function carousel(h,c,v,scope){
+  return `<div class="shot" data-swipe="${scope}" data-sid="${h.id}"><div class="slides" style="transform:translateX(-${v*100}%)">${views(h,c).map((k,i)=>`<img src="${IMG[k]}" alt="${h.name} hoodie, ${c.toLowerCase()}, ${SIDES[i].toLowerCase()}">`).join("")}</div>${scope==="card"?`<button class="open" data-hoodie="${h.id}" aria-label="View ${h.name} hoodie"></button>`:""}
+  <button class="arw prev" data-go="-1" data-sc="${scope}" data-sid="${h.id}" aria-label="Show ${SIDES[1-v].toLowerCase()}">‹</button><button class="arw next" data-go="1" data-sc="${scope}" data-sid="${h.id}" aria-label="Show ${SIDES[1-v].toLowerCase()}">›</button></div>`;
+}
+let feat=hoodies[0].id;
+function drawColl(){
+  const h=hoodies.find(x=>x.id===feat),c=hs[h.id],v=hv[h.id],ks=Object.keys(h.cols);
+  $("#lookimg").innerHTML=carousel(h,c,v,"card");
+  $("#hlist").innerHTML=hoodies.map((x,i)=>`<li><button type="button" data-feat="${x.id}" aria-pressed="${x.id===feat}"><span class="n">0${i+1}</span><span class="t">${x.name}</span><span class="pr num">$120</span></button></li>`).join("");
+  $("#lookctl").innerHTML=`<div class="cols">${ks.map(k=>`<button data-hc="${h.id}" data-col="${k}" aria-pressed="${k===c}"><i style="background:${SW[k]}"></i>${k}</button>`).join("")}</div>
+  <div class="sides">${SIDES.map((sd,i)=>`<button data-side="${i}" data-sc="card" data-sid="${h.id}" aria-pressed="${i===v}">${sd}</button>`).join("")}</div>
+  <button class="btn" data-hoodie="${h.id}">Choose size &amp; zoom in</button><a class="link" href="#wholesale">Ordering for your shop? Wholesale</a>`;
+}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-feat]");if(!b)return;feat=b.dataset.feat;drawColl()});
+document.addEventListener("mouseover",e=>{const b=e.target.closest("[data-feat]");if(b&&b.dataset.feat!==feat&&matchMedia("(hover:hover)").matches){feat=b.dataset.feat;drawColl()}});
+drawColl();
+/* switch side on a card or in the dialog */
+function flip(scope,id,to){
+  if(scope==="card"){hv[id]=to;drawColl()}else{cur.view=to;drawDlg()}
+}
+let swiped=false;
+document.addEventListener("click",e=>{
+  if(swiped){swiped=false;e.stopPropagation();e.preventDefault();return}
+  const g=e.target.closest("[data-go],[data-side]");if(!g)return;e.stopPropagation();
+  const sc=g.dataset.sc,id=g.dataset.sid,now=sc==="card"?hv[id]:cur.view;
+  flip(sc,id,g.dataset.side!==undefined?+g.dataset.side:(now+ +g.dataset.go+2)%2);
+},true);
+/* swipe on phones */
+let sx=null,sEl=null;
+document.addEventListener("touchstart",e=>{const s=e.target.closest("[data-swipe]");if(s){sx=e.touches[0].clientX;sEl=s}},{passive:true});
+document.addEventListener("touchend",e=>{if(lensUsed){sx=null;sEl=null;return}if(sEl&&sx!==null){const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){swiped=true;setTimeout(()=>swiped=false,400);const sc=sEl.dataset.swipe,id=sEl.dataset.sid;flip(sc,id,dx<0?1:0)}}sx=null;sEl=null},{passive:true});
+
+/* catalog (CAD, from Riri's price list) */
+const PRINT=[["8 × 10 in",35],["11 × 14 in",50],["16 × 20 in",120]];
+/* Riri's paintings (working titles) */
+const PAINTINGS=[
+ ["pt_snake","Original Sin","Acrylic on canvas","Dark hair, a golden snake and a stare that doesn't blink."],
+ ["pt_platinum","High Maintenance","Acrylic on canvas","A platinum bombshell resting her face in snakeskin hands."],
+ ["pt_hotline","D.N.D","Acrylic on canvas","Orange curls, glasses low, flip phone and a lit cigarette."],
+ ["pt_pinup","Kiss You Later","Acrylic on canvas","A kneeling pin-up in a white corset, taking aim."],
+ ["pt_lilac","Don't Bother","Acrylic on canvas","Lavender hair and a look over the shoulder."],
+ ["pt_little","Collectables","Acrylic on canvas","Tiny figures scaling a giant against a blue sky."],
+ ["pt_house","Safe Haven","Oil pastel on paper","A Victorian house swallowed by flame."],
+ ["pt_smoke","Devotion in Red","Acrylic and charcoal on paper","A red-washed portrait with a cigarette at her lips."],
+ ["pt_stares","With You As My Witness","Acrylic and charcoal on paper","Three pairs of eyes on bands of red."],
+ ["pt_fragile","Fragile","Oil pastel on paper","A heart sealed in a corked jar marked Caution: Fragile."]
+];
+/* Riri's die-cut stickers: image key, name, size from the Sticker Mule order */
+const STICKERS=[
+ ["st_snake","Original Sin","2.8 × 3.9"],["st_jar","Fragile","2.2 × 3.9"],["st_house","Safe Haven","3.8 × 3.9"],
+ ["st_red","Devotion in Red","2.8 × 3.9"],["st_dnd","D.N.D","2.9 × 3.9"],["st_pinup","Kiss You Later",""],
+ ["st_heart","Heart","2.5 × 3.9"],["st_eye","Eyeball","2.9 × 3.0"],["st_bear","Gummy Bear","2.0 × 3.0"],
+ ["st_melt","Write Off",""],["st_platinum","High Maintenance",""],["st_lilac","Don't Bother",""],["st_stares","With You As My Witness",""],["st_logo","RIRI Studios Logo",""]
+];
+/* framing add-on prices per print size [8x10, 11x14, 16x20] */
+const FRAMES=[
+ ["Unframed",[0,0,0],"",""],
+ ["Modern Black Gallery",[135,185,265],"#141212","Black-stained wood, flat profile, 1⅛\" wide"],
+ ["Oak Veneer Gallery",[155,215,305],"linear-gradient(135deg,#d3ad7f,#a97b4d 45%,#cfa677)","Natural oak veneer, matte, ¾\" wide"],
+ ["Black Accented Profile",[155,215,305],"linear-gradient(135deg,#3a3434,#0c0a0a 55%,#2b2626)","Black satin stain, curved front, 1⅜\" wide"],
+ ["Antiqued Gold Profiled",[155,215,305],"linear-gradient(135deg,#8c6a2b,#e2c47d 35%,#9b7733 60%,#d8b86b)","Brushed antiqued gold, stepped profile, 1¼\" wide"],
+ ["Antiqued Silver Profiled",[155,215,305],"linear-gradient(135deg,#7b7b77,#e6e6e0 35%,#8a8a86 60%,#d2d2cc)","Brushed antiqued silver, stepped profile"],
+ ["Walnut & Gold Profiled",[155,215,305],"#3a2317","Dark walnut with an antiqued gold lip"]
+];
+const fp=(f,size)=>FRAMES[f][1][size]||0;
+const MATS=[["Single mat",'2" crystal white'],["Double mat",'2" white over a ¼" black accent']];
+function frameStyle(f){if(!f)return "";return `background:${FRAMES[f][2]};padding:clamp(10px,2.2vw,18px);box-shadow:0 30px 50px -24px #000;`}
+/* paintings not offered as originals */
+const NOORIG=new Set(["D.N.D","Kiss You Later"]);
+const PDESC="Fine art print on Cold Press Bright, an Italian 100% cotton rag paper (305 gsm) with a watercolour-paper texture. Signed by Riri and shipped flat with a backing board.";
+const products=[
+ ...PAINTINGS.map(([k,n],i)=>({id:"p"+i,type:"print",name:n,img:k,sizes:PRINT,desc:PDESC})),
+ {id:"s2",type:"sticker",name:"Sticker 3-pack",img:"st_pack3",sub:"Any 3 designs",sizes:[["3 stickers",8]],pick:true,desc:"Any three of Riri's die-cut vinyl stickers, packed on a kraft card in a resealable sleeve. Durable, vinyl, weatherproof."},
+ {id:"s3",type:"sticker",name:"Sticker 7-pack",img:"st_pack7",sub:"Any 7 designs",sizes:[["7 stickers",15]],pick:true,desc:"Any seven of Riri's die-cut vinyl stickers, packed on a kraft card in a resealable sleeve. Durable, vinyl, weatherproof."},
+ {id:"s4",type:"sticker",name:"Handle With Care",img:"st_hwc",sub:"Sticker pack of 4",sizes:[["4 stickers",10]],desc:"Four stickers: With You As My Witness, Devotion in Red, Fragile and Safe Haven. Die-cut vinyl, durable and weatherproof, on a kraft card in a resealable sleeve."},
+ {id:"s5",type:"sticker",name:"Femme Fatale",img:"st_ff",sub:"Sticker pack of 6",sizes:[["6 stickers",15]],desc:"All six of Riri's ladies: D.N.D, Don't Bother, Original Sin, High Maintenance, Write Off and Kiss You Later. Die-cut vinyl, durable and weatherproof, on a kraft card in a resealable sleeve."},
+ ...STICKERS.map(([k,n,sz],i)=>({id:"sd"+i,type:"sticker",name:n,img:k,sub:"Vinyl sticker"+(sz?` · ${sz} in`:""),sizes:[["1 sticker",5]],desc:`Die-cut vinyl sticker of Riri's ${n}.${sz?` About ${sz} in.`:""} Durable, matte and weatherproof, made for laptops, bottles and phone cases.`})),
+ {id:"c1",type:"card",name:"Postcard",sub:"4 × 6 in matte · 10 paintings",sizes:[["1 postcard",10]],desc:"A 4 × 6 inch matte postcard with one of Riri's paintings on the front. The back carries the RIRI Studios name, tagline and logo. Frame it, pin it up or send it to someone."},
+ {id:"b1",type:"book",img:"cb_front",name:"Colouring Kit",sub:"8 designs, blank pages & 12 pencil crayons",sizes:[["Book + pencil crayons",18]],
+  pages:[["cb_front","Front cover"],["ph_kit","The kit: book + 12 pencil crayons"],["cb_thanks","A note from Arianna"],["cb_back","Back cover"]],
+  desc:"The Handle With Care & Femme Fatale mini colouring book: 8 of Riri's designs to colour, plus blank pages for when you feel inspired to draw your own. Comes with a 12-pack of pre-sharpened pencil crayons."},
+ {id:"m1",type:"mystery",img:"ph_mystery",name:"Mystery Pack",sub:"Card, original art & sticker",sizes:[["Card + original art + sticker",20]],desc:"A postcard, a small piece of original art and a sticker, chosen by Riri. No two are the same."}
+];
+const TYPES={all:"All",print:"Prints",sticker:"Stickers",card:"Postcards",book:"Colouring",mystery:"Mystery packs"};
+const SING={print:"Fine art print",sticker:"Sticker",card:"Postcard",book:"Colouring kit",mystery:"Mystery pack"};
+const from=p=>Math.min(...p.sizes.map(s=>s[1]));
+const cardFront=i=>`<div class="cf"><img src="${IMG[PAINTINGS[i][0]]}" alt="${PAINTINGS[i][1]} card front" loading="lazy"></div>`;
+const cardBack=()=>`<div class="cb"><img src="${IMG.card_back}" alt="Card back: RIRI Studios logo and tagline" loading="lazy"></div>`;
+const ph=p=>p.type==="book"?`<div class="ph bookph"><div class="bk"><img src="${IMG[p.img]}" alt="${p.name} cover" loading="lazy"></div><img class="kitph" src="${IMG.ph_kit}" alt="The colouring kit with pencil crayons" loading="lazy"><span class="kittag">Book + 12 pencil crayons</span></div>`:p.type==="card"?`<div class="ph cardph">${cardBack()}${cardFront(4)}</div>`:p.img?(p.type==="print"?`<div class="ph print"><div class="inner"><img src="${IMG[p.img]}" alt="${p.name} print" loading="lazy"></div></div>`:`<div class="ph"><img src="${IMG[p.img]}" alt="${p.name}" loading="lazy"></div>`):`<div class="ph"><span class="soon">Photo coming soon</span></div>`;
+
+$("#origs").innerHTML=PAINTINGS.map(([k,n,m],i)=>`<button class="lot" data-orig="${i}" aria-label="${n}, view painting"><div class="pic"><img src="${IMG[k]}" alt="${n}, painting by Riri" loading="lazy"></div><div class="cap"><span class="no">No. ${String(i+1).padStart(2,"0")}</span><div><b>${n}</b><small>${m}</small></div></div></button>`).join("");
+(()=>{const r=$("#origs"),pr=$("#rprog");
+  const upd=()=>{const max=r.scrollWidth-r.clientWidth;const w=Math.max(12,r.clientWidth/r.scrollWidth*100);pr.style.width=w+"%";pr.style.marginLeft=(max>0?r.scrollLeft/max*(100-w):0)+"%"};
+  r.addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);setTimeout(upd,300);
+  const step=()=>Math.max(300,r.clientWidth*.7);
+  $("#rnext").onclick=()=>r.scrollBy({left:step(),behavior:"smooth"});$("#rprev").onclick=()=>r.scrollBy({left:-step(),behavior:"smooth"});
+  let down=null,moved=false;
+  r.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse")return;down={x:e.clientX,l:r.scrollLeft};moved=false});
+  addEventListener("pointermove",e=>{if(!down)return;const dx=e.clientX-down.x;if(Math.abs(dx)>5){moved=true;r.classList.add("dragging")}r.scrollLeft=down.l-dx});
+  addEventListener("pointerup",()=>{down=null;r.classList.remove("dragging")});
+  r.addEventListener("click",e=>{if(moved){e.stopPropagation();e.preventDefault();moved=false}},true);
+})();
+
+/* sizes & framing configurator */
+const FDIM=[["8 × 10 in","12 × 14 in",.4],["11 × 14 in","15 × 18 in",.52],["16 × 20 in","20 × 24 in",.68]];
+const fc={p:0,size:1,fr:4,mt:0};
+$("#fpaint").innerHTML=PAINTINGS.map((x,i)=>`<option value="${i}">${x[1]}</option>`).join("");
+function drawFC(){
+  const P=products[fc.p],k=PAINTINGS[fc.p][0],pr=P.sizes[fc.size][1],fpr=fp(fc.fr,fc.size);
+  const w=FDIM[fc.size][2]*(fc.fr?1:.82);
+  $("#fpv").style.width=(w*100)+"%";
+  $("#fpv").innerHTML=fc.fr?`<div class="fo ${fc.fr===6?"lip":""}" style="background:${FRAMES[fc.fr][2]}"><div class="fm ${fc.mt?"dbl":""}"><img src="${IMG[k]}" alt="${PAINTINGS[fc.p][1]} print in a ${FRAMES[fc.fr][0]} frame"></div></div>`:`<div class="fu"><img src="${IMG[k]}" alt="${PAINTINGS[fc.p][1]} print, unframed"></div>`;
+  $("#fdim").textContent=fc.fr?`${FDIM[fc.size][0]} print · ${FDIM[fc.size][1]} framed`:`${FDIM[fc.size][0]} print · unframed`;
+  $("#fsize").innerHTML=P.sizes.map((x,i)=>`<button class="o num" type="button" aria-pressed="${i===fc.size}" data-fs="${i}">${x[0].replace(" in","")}</button>`).join("");
+  $("#fframes").innerHTML=FRAMES.map((F,i)=>`<button type="button" class="fl" aria-pressed="${i===fc.fr}" data-ff="${i}"><i class="${i?"":"none"}${i===6?" lip":""}" style="${i?`background:${F[2]}`:""}"></i><span>${i?F[0]:"Unframed"}</span><em class="num">${i?"+"+fmt(fp(i,fc.size)):"—"}</em></button>`).join("");
+  $("#fmatw").hidden=!fc.fr;
+  $("#fmat").innerHTML=MATS.map((M,i)=>`<button class="o" type="button" aria-pressed="${i===fc.mt}" data-fm="${i}">${M[0]}</button>`).join("");
+  $("#fsum").innerHTML=`<span>Print ${fmt(pr)}${fc.fr?` + framing ${fmt(fpr)}`:""}</span><b>${fmt(pr+fpr)}</b>`;
+  $("#fadd").textContent=fc.fr?"Add framed print":"Add print";
+}
+$("#fpaint").onchange=e=>{fc.p=+e.target.value;drawFC()};
+$("#framing").addEventListener("click",e=>{const b=e.target.closest("[data-fs],[data-ff],[data-fm]");if(!b)return;
+  if(b.dataset.fs)fc.size=+b.dataset.fs;else if(b.dataset.ff)fc.fr=+b.dataset.ff;else fc.mt=+b.dataset.fm;drawFC()});
+$("#fadd").onclick=()=>{const P=products[fc.p];
+  add({sku:{t:"print",i:fc.p,size:fc.size},key:P.id+fc.size,name:P.name+" print",opt:P.sizes[fc.size][0],price:P.sizes[fc.size][1],is11:fc.size===1,thumb:IMG[P.img]});
+  if(fc.fr)add({sku:{t:"frame",i:fc.p,size:fc.size,fr:fc.fr,mt:fc.mt},key:P.id+fc.size+"f"+fc.fr+fc.mt,name:"Framing · "+FRAMES[fc.fr][0],opt:`${P.name} ${P.sizes[fc.size][0]} · ${MATS[fc.mt][0].toLowerCase()}`,price:fp(fc.fr,fc.size),thumb:IMG[P.img]})};
+drawFC();
+let filter="all";
+function render(){
+  $("#tabs").innerHTML=Object.entries(TYPES).map(([k,v])=>`<button data-type="${k}" aria-pressed="${filter===k}">${v}</button>`).join("");
+  const list=products.filter(p=>filter==="all"||p.type===filter);
+  $("#grid").innerHTML=list.map(p=>`<button class="card t-${p.type}" data-id="${p.id}">${ph(p)}<div><div class="irow"><h3>${p.name}</h3><span class="price num" style="color:var(--creme)">${p.sizes.length>1?"from ":""}${fmt(from(p))}</span></div><div class="irow" style="margin-top:4px"><span>${p.sub||SING[p.type]}</span></div></div></button>`).join("");
+}
+render();
+
+/* bundles */
+/* bundles: each slot has a dropdown */
+const PNAMES=PAINTINGS.map(x=>x[1]);
+const SNAMES=STICKERS.map(x=>x[1]);
+const SL={
+ print8:["8×10 print",35,"Print design",PNAMES],
+ print11:["11×14 print",50,"Print design",PNAMES],
+ sticker:["Sticker",5,"Sticker",SNAMES],
+ card:["Postcard (4 × 6)",10,"Postcard design",PNAMES],
+ pack7:["Sticker 7-pack",15,"Pack",["Riri's pick (7 assorted)","Choose my own (note at checkout)"]],
+ kit:["Colouring kit",18,"Kit",["Handle With Care & Femme Fatale"]],
+ hoodie:["Hoodie",120,"Design",["Love Bite","Original Sin","D.N.D","Kiss You Later"]],
+ hwc:["Handle With Care pack",10,"Pack",["4 stickers"]],
+ ff:["Femme Fatale pack",15,"Pack",["6 stickers"]]
+};
+const tiers=[
+ {id:"t1",name:"Small",img:"bd_small",slots:["print8","sticker","sticker","card"],price:48,blurb:"A first taste: one print, two stickers and a card."},
+ {id:"t2",name:"Medium",img:"bd_medium",slots:["print11","print8","pack7","kit"],price:82,feat:true,blurb:"Two prints for the wall, a sticker pack and the colouring kit."},
+ {id:"t3",name:"Large",img:"bd_large",slots:["hoodie","print11","print8","hwc","ff","kit"],price:189,blurb:"The whole world of Riri: a hoodie, two prints, both sticker packs and the colouring kit."}
+];
+const tsel={};tiers.forEach(t=>tsel[t.id]=t.slots.map((k,i)=>({v:k==="sticker"?i:k==="print8"?2:k==="print11"?0:k==="card"?4:0,col:0,sz:0,fr:0})));
+const PSIZE={print8:0,print11:1};
+const tframe=t=>t.slots.reduce((a,k,i)=>a+(k in PSIZE?fp(tsel[t.id][i].fr,PSIZE[k]):0),0);
+const tval=t=>t.slots.reduce((a,k)=>a+SL[k][1],0)+tframe(t);
+const tprice=t=>t.price+tframe(t);
+function slotHtml(t,k,i){const S=SL[k],sel=tsel[t.id][i],id=`${t.id}_${i}`;
+  let extra="";
+  if(k==="hoodie")extra=`<div class="sel2"><div class="selw"><select id="${id}c" data-t="${t.id}" data-i="${i}" data-f="col" aria-label="Hoodie colour"><option ${!sel.col?"selected":""}>Creme</option><option ${sel.col?"selected":""}>Black</option></select></div><div class="selw"><select id="${id}s" data-t="${t.id}" data-i="${i}" data-f="sz" aria-label="Hoodie size">${HS.map((z,j)=>`<option ${(sel.sz||0)===j?"selected":""}>${z}</option>`).join("")}</select></div></div>`;
+  if(k in PSIZE)extra=`<div class="selw"><select id="${id}f" data-t="${t.id}" data-i="${i}" data-f="fr" aria-label="Framing for this print">${FRAMES.map((F,j)=>`<option value="${j}" ${j===sel.fr?"selected":""}>${j?`Framed: ${F[0]} +${fmt(F[1][PSIZE[k]])}`:"Unframed"}</option>`).join("")}</select></div>`;
+  const single=S[3].length===1;
+  return `<li><label for="${id}"><span>${S[0]}</span><span class="num">${fmt(S[1])}</span></label>${single?`<div class="fixed">${S[3][0]}</div>`:`<div class="selw"><select id="${id}" data-t="${t.id}" data-i="${i}" data-f="v">${S[3].map((o,j)=>`<option value="${j}" ${j===sel.v?"selected":""}>${o}</option>`).join("")}</select></div>`}${extra}</li>`}
+const tpHtml=t=>{const v=tval(t),pr=tprice(t);return `<b class="num">${fmt(pr)}</b><s class="num">${fmt(v)}</s><em class="num">Save ${fmt(v-pr)}</em>${tframe(t)?`<small class="tfr">incl. ${fmt(tframe(t))} framing</small>`:""}`};
+function drawTiers(){$("#tiers").innerHTML=tiers.map(t=>{const v=tval(t);return `<div class="tier ${t.feat?"feat":""}">
+  <div class="timg"><img src="${IMG[t.img]}" alt="Everything in the ${t.name} bundle" loading="lazy"></div>
+  <div class="eyebrow">${t.feat?"Most collected":"Bundle"}</div><h3>${t.name}</h3><p class="tblurb">${t.blurb}</p>
+  <details class="tcust"><summary>Choose your designs</summary><ul class="slots">${t.slots.map((k,i)=>slotHtml(t,k,i)).join("")}</ul></details>
+  <div class="tp" id="tp_${t.id}">${tpHtml(t)}</div>
+  <button class="btn ${t.feat?"":"ghost"}" data-tier="${t.id}">Add to bag</button></div>`}).join("")}
+drawTiers();
+$("#tiers").addEventListener("change",e=>{const el=e.target.closest("select");if(!el)return;const f=el.dataset.f;tsel[el.dataset.t][+el.dataset.i][f]=(f==="v"||f==="fr")?+el.value:el.selectedIndex;const t=tiers.find(x=>x.id===el.dataset.t);$("#tp_"+t.id).innerHTML=tpHtml(t)});
+function tierSummary(t){return t.slots.map((k,i)=>{const S=SL[k],sel=tsel[t.id][i];let o=S[3].length>1?`${S[0]}: ${S[3][sel.v]}`:S[0];if(k==="hoodie")o+=` (${sel.col?"Black":"Creme"}, ${HS[sel.sz||0]})`;if(k in PSIZE&&sel.fr)o+=`, framed in ${FRAMES[sel.fr][0]}`;return o}).join(" · ")}
+
+/* clicks */
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-type],[data-id],[data-jump],[data-tier],[data-hoodie],[data-hc],[data-orig]");if(!t||t.closest("#dlg"))return;
+  if(t.dataset.orig!==undefined){const i=+t.dataset.orig;cur={kind:"o",i,p:products[i],size:0,qty:1,frame:+(t.dataset.frame||0),mat:0};drawDlg();show();return}
+  if(t.dataset.hc){hs[t.dataset.hc]=t.dataset.col;drawColl()}
+  else if(t.dataset.hoodie)openHoodie(t.dataset.hoodie);
+  else if(t.dataset.jump){filter=t.dataset.jump;render()}
+  else if(t.dataset.tier){const x=tiers.find(a=>a.id===t.dataset.tier);const sum=tierSummary(x);add({sku:{t:"bundle",id:x.id,sel:JSON.parse(JSON.stringify(tsel[x.id]))},key:x.id+sum,name:x.name+" bundle",opt:sum,price:tprice(x),thumb:IMG[x.img]})}
+  else if(t.dataset.type){filter=t.dataset.type;render()}
+  else if(t.dataset.id)openProduct(t.dataset.id);
+});
+
+/* dialog */
+let cur=null;
+function openHoodie(id){const h=hoodies.find(x=>x.id===id);cur={kind:"h",h,col:hs[id],size:0,qty:1,view:hv[id]};drawDlg();show()}
+function openProduct(id){const p=products.find(x=>x.id===id);if(p.type==="print"){cur={kind:"o",i:+p.id.slice(1),p,size:0,qty:1,frame:0,mat:0};drawDlg();show();return}cur={kind:"p",p,size:0,qty:1,design:0,side:0,page:0};drawDlg();show()}
+function show(){$("#scrim").hidden=false;$("#closeDlg").focus()}
+const qtyHtml=q=>`<div class="f"><label>Quantity</label><div class="qty"><button data-q="-1" aria-label="Fewer">−</button><span class="num">${q}</span><button data-q="1" aria-label="More">+</button></div></div>`;
+function drawDlg(){
+  if(cur.kind==="h"){const {h,col,size,qty}=cur;const ks=Object.keys(h.cols);
+    $("#dlg").innerHTML=`<div class="zoomwrap" id="zw">${carousel(h,col,cur.view,"dlg")}<div class="lens" id="lens"></div><div class="zhint"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="5"/><path d="M10.2 10.2 15 15"/></svg>${matchMedia("(hover:none)").matches?"Touch &amp; hold to zoom":"Hover to zoom"}</div></div><div class="info"><div class="eyebrow">Hoodie</div><div><h3>${h.name}</h3><div class="dp num" style="margin-top:10px">${fmt(120*qty)}</div></div><p>${h.desc}</p>
+    <div class="thumbs">${views(h,col).map((k,i)=>`<button data-side="${i}" data-sc="dlg" data-sid="${h.id}" aria-pressed="${i===cur.view}" aria-label="${SIDES[i]}"><img src="${IMG[k]}" alt=""></button>`).join("")}</div>
+    <div class="f"><label>Colour — ${col}</label><div class="opts">${ks.map(k=>`<button class="o sw" aria-pressed="${k===col}" data-col="${k}"><i style="background:${SW[k]}"></i>${k}</button>`).join("")}</div></div>
+    <div class="f"><label>Size</label><div class="opts">${HS.map((s,i)=>`<button class="o" style="min-width:52px" aria-pressed="${i===size}" data-size="${i}">${s}</button>`).join("")}</div></div>
+    ${qtyHtml(qty)}<button class="btn" id="addBtn">Add to bag</button></div>`;return}
+  if(cur.kind==="o"){const [k,n,m,d]=PAINTINGS[cur.i];const {p,size,qty}=cur;const fr=cur.frame||0,mt=cur.mat||0;const price=p.sizes[size][1];
+    const total=(size===1?price*qty-Math.floor(qty/2)*5:price*qty)+fp(fr,size)*qty;
+    $("#dlg").innerHTML=`<div class="art"><div class="mat ${fr?"framed":""}" style="${frameStyle(fr)}">${fr?`<div class="matin ${mt?"dbl":""} ${fr===6?"lip":""}"><img src="${IMG[k]}" alt="${n}, painting by Riri"></div>`:`<img src="${IMG[k]}" alt="${n}, painting by Riri">`}</div></div><div class="info"><div class="eyebrow">${NOORIG.has(n)?"Painting":"Original painting"} · ${m}</div><div><h3>${n}</h3></div><p>${d}</p>
+    <div class="f"><label>Fine art print · Cold Press Bright paper</label><div class="opts">${p.sizes.map((s,i)=>`<button class="o num" aria-pressed="${i===size}" data-size="${i}">${s[0]} — ${fmt(s[1])}</button>`).join("")}</div><small class="fnote">Italian 100% cotton rag, 305 gsm, watercolour-paper texture, bright white, acid-free. Signed by Riri.</small></div>
+    <div class="f"><label>Framing${fr?" — "+FRAMES[fr][0]:""}</label><div class="fsw">${FRAMES.map((F,i)=>`<button type="button" data-fr="${i}" aria-pressed="${i===fr}" title="${F[0]}${i?" +"+fmt(fp(i,size)):""}"><i style="${i?`background:${F[2]}`:""}" class="${i?"":"none"}${i===6?" lip":""}"></i></button>`).join("")}</div>
+      ${fr?`<small class="fnote">${FRAMES[fr][3]} · +${fmt(fp(fr,size))} for ${p.sizes[size][0]}</small><div class="opts" style="margin-top:10px">${MATS.map((M,i)=>`<button class="o" aria-pressed="${i===mt}" data-mt="${i}">${M[0]}</button>`).join("")}</div><small class="fnote">${MATS[mt][1]} mat · framing acrylic · acid-free backing · hanging wire</small>`:`<small class="fnote">Choose a frame to receive it ready to hang.</small>`}</div>
+    ${qtyHtml(qty)}${size===1?`<span class="deal">11 × 14 prints: 2 for $95</span>`:""}
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap"><button class="btn" id="addBtn">Add ${fr?"framed ":""}print · <span class="num">${fmt(total)}</span></button></div>
+    ${NOORIG.has(n)?"":`<div class="or">or</div>
+    <div><button class="btn ghost" id="askOrig">Ask about the original</button></div>`}</div>`;return}
+  if(cur.p&&cur.p.pages){const {p,qty}=cur;const pg=cur.page||0,P=p.pages;
+    $("#dlg").innerHTML=`<div class="ph flip"><div class="leaf ${P[pg][0]==="ph_kit"?"photo":""}" id="leaf"><img src="${IMG[P[pg][0]]}" alt="${P[pg][1]}"></div>
+      <button class="arw prev" data-pg="-1" aria-label="Previous page">‹</button><button class="arw next" data-pg="1" aria-label="Next page">›</button>
+      <div class="pgno">${pg+1} / ${P.length} · ${P[pg][1]}</div></div>
+    <div class="info"><div class="eyebrow">Colouring kit</div><div><h3>Handle With Care &amp; <i>Femme Fatale</i></h3><div class="dp num" style="margin-top:10px">${fmt(18*qty)}</div></div><p>${p.desc}</p>
+    <div class="f"><label>Flip through</label><div class="pthumbs">${P.map((x,i)=>`<button data-pgto="${i}" aria-pressed="${i===pg}" aria-label="${x[1]}"><img src="${IMG[x[0]]}" alt="" loading="lazy"></button>`).join("")}</div></div>
+    ${qtyHtml(qty)}<button class="btn" id="addBtn">Add to bag</button></div>`;return}
+  if(cur.p&&cur.p.type==="card"){const {p,qty,design,side}=cur;
+    $("#dlg").innerHTML=`<div class="ph carddlg">${side?cardBack():cardFront(design)}</div><div class="info"><div class="eyebrow">Postcard · 4 × 6 in matte · ${side?"back":"front"}</div><div><h3>${PAINTINGS[design][1]}</h3><div class="dp num" style="margin-top:10px">${fmt(10*qty)}</div></div><p>${p.desc}</p>
+    <div class="f"><label>Design</label><div class="opts">${PAINTINGS.map((d,i)=>`<button class="o" aria-pressed="${i===design}" data-design="${i}">${d[1]}</button>`).join("")}</div></div>
+    <div class="f"><label>View</label><div class="opts"><button class="o" aria-pressed="${!side}" data-cside="0">Front</button><button class="o" aria-pressed="${!!side}" data-cside="1">Back</button></div></div>
+    ${qtyHtml(qty)}<button class="btn" id="addBtn">Add to bag</button></div>`;return}
+  const {p,size,qty}=cur;const price=p.sizes[size][1];
+  const total=p.type==="print"&&size===1?price*qty-Math.floor(qty/2)*5:price*qty;
+  $("#dlg").innerHTML=`${ph(p)}<div class="info"><div class="eyebrow">${p.sub||SING[p.type]}</div><div><h3>${p.name}</h3><div class="dp num" style="margin-top:10px">${fmt(total)}</div></div><p>${p.desc}</p>
+  ${p.sizes.length>1?`<div class="f"><label>Size</label><div class="opts">${p.sizes.map((s,i)=>`<button class="o num" aria-pressed="${i===size}" data-size="${i}">${s[0]} — ${fmt(s[1])}</button>`).join("")}</div></div>`:""}
+  ${p.pick?`<div class="f"><label for="pickTxt">Which designs?</label><input id="pickTxt" placeholder="e.g. Original Sin, Fragile, Safe Haven"></div>`:""}
+  ${qtyHtml(qty)}${p.type==="print"&&size===1?`<span class="deal">11 × 14 prints: 2 for $95</span>`:""}
+  <button class="btn" id="addBtn">Add to bag</button></div>`;
+}
+$("#dlg").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  if(b.dataset.fr!==undefined){cur.frame=+b.dataset.fr;drawDlg();return}
+  if(b.dataset.mt!==undefined){cur.mat=+b.dataset.mt;drawDlg();return}
+  if(b.dataset.pg!==undefined||b.dataset.pgto!==undefined){const n=cur.p.pages.length,old=cur.page||0;cur.page=b.dataset.pgto!==undefined?+b.dataset.pgto:(old+ +b.dataset.pg+n)%n;cur.dir=(b.dataset.pg||(cur.page>old?1:-1))>0?1:-1;drawDlg();const l=$("#leaf");if(l&&!RM)l.animate([{transform:`perspective(1200px) rotateY(${cur.dir*-70}deg)`,transformOrigin:cur.dir>0?"0 50%":"100% 50%",opacity:.3},{transform:"perspective(1200px) rotateY(0)",transformOrigin:cur.dir>0?"0 50%":"100% 50%",opacity:1}],{duration:420,easing:"cubic-bezier(.2,.7,.2,1)"});return}
+  if(b.dataset.design!==undefined){cur.design=+b.dataset.design;cur.side=0}else if(b.dataset.cside!==undefined)cur.side=+b.dataset.cside;else if(b.dataset.size)cur.size=+b.dataset.size;else if(b.dataset.col)cur.col=b.dataset.col;else if(b.dataset.q)cur.qty=Math.max(1,cur.qty+ +b.dataset.q);
+  else if(b.id==="addBtn"){
+    if(cur.kind==="h"){const {h,col,size,qty}=cur;add({sku:{t:"hoodie",id:h.id,col,size},key:h.id+col+size,name:h.name+" hoodie",opt:`${col} · ${HS[size]}`,price:120,thumb:IMG[h.cols[col]]},qty)}
+    else if(cur.p.type==="card"){const {p,qty,design}=cur;add({sku:{t:"card",design},key:"card"+design,name:PAINTINGS[design][1]+" postcard",opt:"4 × 6 matte postcard",price:10,thumb:IMG[PAINTINGS[design][0]]},qty)}
+    else if(cur.kind==="o"){const {p,size,qty}=cur,fr=cur.frame||0,mt=cur.mat||0;
+      add({sku:{t:"print",i:cur.i,size},key:p.id+size,name:p.name+" print",opt:p.sizes[size][0],price:p.sizes[size][1],is11:size===1,thumb:IMG[p.img]},qty);
+      if(fr)add({sku:{t:"frame",i:cur.i,size,fr,mt},key:p.id+size+"f"+fr+mt,name:"Framing · "+FRAMES[fr][0],opt:`${p.name} ${p.sizes[size][0]} · ${MATS[mt][0].toLowerCase()}`,price:fp(fr,size),thumb:IMG[p.img]},qty)}
+    else{const {p,size,qty}=cur;const pick=$("#pickTxt")?.value.trim();add({sku:{t:"product",id:p.id,size,pick:pick||""},key:p.id+size+(pick||""),name:p.name+(p.type==="print"?" print":""),opt:[p.sizes[size][0],pick].filter(Boolean).join(" · "),price:p.sizes[size][1],is11:p.type==="print"&&size===1,thumb:p.img&&IMG[p.img]},qty)}
+    closeDlg();return}
+  else if(b.id==="askOrig"){const n=PAINTINGS[cur.i][1];closeDlg();$("#cidea").value=`I'd like to ask about the original painting "${n}".`;$("#cform").hidden=false;$("#creq").hidden=true;document.getElementById("commissions").scrollIntoView({behavior:"smooth"});setTimeout(()=>$("#cname").focus({preventScroll:true}),600);return}
+  else return;
+  drawDlg();
+});
+function closeDlg(){$("#scrim").hidden=true}
+$("#closeDlg").onclick=closeDlg;$("#scrim").onclick=e=>{if(e.target.id==="scrim")closeDlg()};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeDlg();$("#drawer").classList.remove("open")}});
+
+/* bag (in-memory) */
+const cart=[];const FREE=75;
+try{const sv=JSON.parse(localStorage.getItem("riri_bag")||"[]");if(Array.isArray(sv))sv.forEach(x=>x&&x.sku&&cart.push(x))}catch(e){}
+const saveBag=()=>{try{localStorage.setItem("riri_bag",JSON.stringify(cart))}catch(e){}};
+const QUIPS=["In the bag.","Good taste.","Bagged.","Excellent choice.","Into the bag it goes."];
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let lastPt=null;document.addEventListener("pointerdown",e=>{lastPt={x:e.clientX,y:e.clientY}},true);
+const SKS=["sk_snake","sk_eye","sk_bear","sk_heart","sk_house","sk_red","sk_jar","sk_dnd","sk_pinup","sk_melt","sk_logo","sk_platinum","sk_lilac","sk_stares"];
+function fly(){
+  const bag=$("#openCart");const go=()=>{bag.classList.remove("bump");void bag.offsetWidth;bag.classList.add("bump")};
+  if(RM||!lastPt||!bag.offsetParent){go();return}
+  const b=bag.getBoundingClientRect(),f=document.createElement("img");f.className="flyer";f.alt="";
+  f.src=IMG[SKS[Math.floor(Math.random()*SKS.length)]];document.body.appendChild(f);
+  const x0=lastPt.x-42,y0=lastPt.y-42,x1=b.left+b.width/2-42,y1=b.top+b.height/2-42;
+  const a=f.animate([{transform:`translate(${x0}px,${y0}px) rotate(-20deg) scale(.6)`,opacity:0},
+    {transform:`translate(${x0}px,${y0-60}px) rotate(0deg) scale(1.1)`,opacity:1,offset:.25},
+    {transform:`translate(${x1}px,${y1}px) rotate(320deg) scale(.25)`,opacity:.9}],{duration:850,easing:"cubic-bezier(.5,0,.6,1)"});
+  a.onfinish=()=>{f.remove();go()};
+}
+function add(item,q=1){const ex=cart.find(c=>c.key===item.key);ex?ex.qty+=q:cart.push({...item,qty:q});drawCart();fly();toast(QUIPS[Math.floor(Math.random()*QUIPS.length)])}
+function drawCart(){saveBag();
+  const n=cart.reduce((a,c)=>a+c.qty,0);
+  const n11=cart.filter(c=>c.is11).reduce((a,c)=>a+c.qty,0),disc=Math.floor(n11/2)*5;
+  const sub=cart.reduce((a,c)=>a+c.qty*c.price,0)-disc;
+  $("#count").textContent=n;$("#sub").textContent=fmt(sub);
+  $("#ship").innerHTML=(sub>=FREE?"Your order ships free.":`${fmt(FREE-sub)} away from free shipping.`)+`<div class="track"><i style="width:${Math.min(100,sub/FREE*100)}%"></i></div>`;
+  $("#lines").innerHTML=cart.length?cart.map((c,i)=>`<div class="line"><div class="t">${c.thumb?`<img src="${c.thumb}" alt="">`:""}</div><span>${c.name}</span><span class="num">${fmt(c.price*c.qty)}</span><small>${c.opt} · Qty ${c.qty}<br><button class="rm" data-rm="${i}">Remove</button></small></div>`).join("")+(disc?`<div class="line disc"><span>11 × 14 pair savings</span><span class="num">−${fmt(disc)}</span></div>`:""):`<p style="color:var(--mute)">Your bag is empty.</p>`;
+}
+$("#lines").addEventListener("click",e=>{const b=e.target.closest("[data-rm]");if(b){cart.splice(+b.dataset.rm,1);drawCart()}});
+$("#openCart").onclick=e=>{e.preventDefault();$("#drawer").classList.add("open")};$("#closeCart").onclick=()=>$("#drawer").classList.remove("open");
+$("#checkout").onclick=async()=>{
+  const btn=$("#checkout"),note=$("#coNote");
+  if(!cart.length){note.textContent="Your bag is empty.";note.hidden=false;return}
+  btn.disabled=true;btn.textContent="Opening secure checkout…";note.hidden=true;
+  try{
+    const r=await fetch("/.netlify/functions/checkout",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({items:cart.map(c=>({sku:c.sku,qty:c.qty}))})});
+    const d=await r.json().catch(()=>({}));
+    if(r.ok&&d.url){location.href=d.url;return}
+    note.textContent=d.error||"Checkout couldn't start. Please try again in a minute.";note.hidden=false;
+  }catch(e){note.textContent="Checkout couldn't start. Check your connection and try again.";note.hidden=false}
+  btn.disabled=false;btn.textContent="Checkout";
+};
+let tt;function toast(m){const t=$("#toast");t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,1600)}
+
+/* commissions */
+let cmed="Acrylic paint";
+$("#cmed").addEventListener("click",e=>{const b=e.target.closest("[data-med]");if(!b)return;cmed=b.dataset.med;$("#cmed").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b))});
+const RATE=1.5,PRE=[[8,10],[11,14],[12,16],[16,20],[18,24],[24,36]];
+function quote(){const w=+$("#cw").value||0,h=+$("#ch").value||0;$("#qmath").textContent=`${w} × ${h} in · ${w*h} sq in at $1.50`;$("#qtotal").textContent=fmt(w*h*RATE);
+  $("#presets").innerHTML=PRE.map(([a,b])=>`<button type="button" class="o num" data-pw="${a}" data-ph="${b}" aria-pressed="${a===w&&b===h}">${a} × ${b}</button>`).join("")}
+$("#cw").oninput=$("#ch").oninput=quote;
+$("#presets").addEventListener("click",e=>{const b=e.target.closest("[data-pw]");if(b){$("#cw").value=b.dataset.pw;$("#ch").value=b.dataset.ph;quote()}});
+quote();
+$("#cform").addEventListener("submit",async e=>{e.preventDefault();const f=e.target,w=$("#cw").value,h=$("#ch").value;
+  $("#h_medium").value=cmed;$("#h_size").value=`${w} x ${h} in`;$("#h_quote").value=`${fmt(w*h*RATE)} CAD`;
+  const btn=f.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent="Sending…";
+  try{const r=await fetch("/",{method:"POST",body:new FormData(f)});if(!r.ok)throw 0;
+    $("#csum").textContent=`Thank you, ${$("#cname").value}. Riri has your request for a ${w} x ${h} in ${cmed.toLowerCase()} piece (${fmt(w*h*RATE)} CAD) and will email you within a few days.`;
+    $("#creq").hidden=false;f.hidden=true;$("#ccopy").hidden=true;
+  }catch(_){btn.disabled=false;btn.textContent="Request commission";alert("That didn't send. Please try again, or email Riri directly.")}
+});
+$("#ccopy").onclick=()=>{const t=$("#csum").textContent;navigator.clipboard?.writeText(t).then(()=>toast("Copied"),()=>{const r=document.createRange();r.selectNodeContents($("#csum"));getSelection().removeAllRanges();getSelection().addRange(r)})};
+/* forms: on the live site these post to Netlify Forms */
+async function sendForm(f){try{const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(new FormData(f)).toString()});return r.ok}catch(_){return false}}
+$("#wform").addEventListener("submit",async e=>{e.preventDefault();const f=e.target,btn=f.querySelector('button[type="submit"]');
+  btn.disabled=true;btn.textContent="Sending…";
+  const ok=await sendForm(f);
+  if(ok){$("#wdonetxt").textContent=`Arianna has your request for ${$("#wbiz").value} and will email ${$("#wmail").value} with wholesale pricing within 2 business days.`;f.hidden=true;$("#wdone").hidden=false}
+  else{btn.disabled=false;btn.textContent="Request wholesale pricing";toast("That didn't send. Please try again.")}
+});
+/* newsletter: on the live site this posts to Mailchimp */
+async function subscribeEmail(em){
+  try{const r=await fetch("/.netlify/functions/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:em})});
+    const d=await r.json().catch(()=>({}));return r.ok?{ok:true}:{ok:false,error:d.error||"That didn't go through. Please try again."}}
+  catch(_){return {ok:false,error:"That didn't go through. Please try again."}}
+}
+$("#news").addEventListener("submit",async e=>{e.preventDefault();const ok=$("#newsOk");ok.hidden=false;ok.textContent="Adding you…";
+  const r=await subscribeEmail($("#nmail").value.trim());ok.textContent=r.ok?"You're on the list.":r.error;if(r.ok){e.target.reset();popSeen()}});
+const POPKEY="riri_pop";
+const popSeen=()=>{try{localStorage.setItem(POPKEY,"1")}catch(e){}};
+const popWasSeen=()=>{try{return localStorage.getItem(POPKEY)==="1"}catch(e){return false}};
+function openPop(){if(popWasSeen()||!$("#pop").hidden||!$("#scrim").hidden||$("#drawer").classList.contains("open"))return;$("#pop").hidden=false;setTimeout(()=>$("#popMail").focus({preventScroll:true}),50)}
+function closePop(){$("#pop").hidden=true;popSeen()}
+$("#popX").onclick=closePop;$("#pop").addEventListener("click",e=>{if(e.target.id==="pop")closePop()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#pop").hidden)closePop()});
+$("#popForm").addEventListener("submit",async e=>{e.preventDefault();const ok=$("#popOk");ok.hidden=false;ok.textContent="Adding you…";
+  const r=await subscribeEmail($("#popMail").value.trim());
+  if(r.ok){ok.textContent="You're on the list. Watch your inbox for the next drop.";e.target.hidden=true;popSeen();setTimeout(()=>{$("#pop").hidden=true},2600)}else ok.textContent=r.error});
+let popTimer=setTimeout(openPop,12000);
+addEventListener("scroll",function onS(){if(scrollY>innerHeight*1.6){openPop();removeEventListener("scroll",onS)}},{passive:true});
+$("#copyMail").onclick=()=>{const t="Arianna@riristudios.com";const done=()=>{toast("Email copied")};
+  if(navigator.clipboard)navigator.clipboard.writeText(t).then(done,()=>{const r=document.createRange();r.selectNodeContents($("#cmailtxt"));getSelection().removeAllRanges();getSelection().addRange(r)});};
+drawCart();
+
+/* magnifying glass on the hoodie view */
+const ZOOM=2.6;let lensUsed=false,holdT=null,holdPt=null;
+function lensAt(x,y,touch){
+  const zw=$("#zw"),lens=$("#lens");if(!zw||!lens)return;
+  const shot=zw.querySelector(".shot"),r=shot.getBoundingClientRect(),zr=zw.getBoundingClientRect();
+  const px=x-r.left,py=y-r.top;
+  if(px<0||py<0||px>r.width||py>r.height){lensOff();return}
+  const img=shot.querySelectorAll(".slides img")[cur.view||0];
+  const L=lens.offsetWidth;
+  lens.style.backgroundImage=`url("${img.src}")`;
+  lens.style.backgroundSize=`${r.width*ZOOM}px ${r.height*ZOOM}px`;
+  lens.style.backgroundPosition=`${-(px*ZOOM-L/2)}px ${-(py*ZOOM-L/2)}px`;
+  const lift=touch?L*.75:0;
+  lens.style.left=(x-zr.left-L/2)+"px";lens.style.top=(y-zr.top-L/2-lift)+"px";
+  lens.classList.add("on");zw.classList.add("zooming");
+}
+function lensOff(){const l=$("#lens"),zw=$("#zw");if(l)l.classList.remove("on");if(zw)zw.classList.remove("zooming")}
+document.addEventListener("mousemove",e=>{if(e.target.closest("#zw .shot")&&!e.target.closest(".arw"))lensAt(e.clientX,e.clientY);else lensOff()});
+document.addEventListener("touchstart",e=>{
+  if(!e.target.closest("#zw .shot")||e.target.closest(".arw"))return;
+  const t=e.touches[0];holdPt={x:t.clientX,y:t.clientY};lensUsed=false;
+  clearTimeout(holdT);holdT=setTimeout(()=>{lensUsed=true;lensAt(holdPt.x,holdPt.y,true)},220);
+},{passive:true});
+document.addEventListener("touchmove",e=>{
+  if(!holdPt)return;const t=e.touches[0];
+  if(lensUsed){e.preventDefault();lensAt(t.clientX,t.clientY,true)}
+  else if(Math.hypot(t.clientX-holdPt.x,t.clientY-holdPt.y)>10){clearTimeout(holdT);holdPt=null}
+},{passive:false});
+document.addEventListener("touchend",()=>{clearTimeout(holdT);holdPt=null;if(lensUsed){lensOff();swiped=true;setTimeout(()=>{swiped=false;lensUsed=false},350)}},true);
+
+/* peel & stick: real stickers slapped around the hero, draggable */
+const SLAPS=[["sk_eye",92,12,96,8],["sk_heart",54,20,100,-10],["sk_bear",95,60,78,14],["sk_jar",62,70,84,-8],["sk_snake",31,80,118,-9],["sk_dnd",47,84,98,11],["sk_house",82,84,112,-6],["sk_logo",46,48,86,6],["sk_red",74,58,92,7]];
+/* phones: x in %, y in px from the top of the hero, hugging the frame corners */
+const SLAPS_M=[["sk_eye",86,16,58,8],["sk_heart",9,40,62,-10],["sk_bear",91,236,52,14],["sk_snake",11,222,62,-8]];
+let lastMob=null;addEventListener("resize",()=>{const m=innerWidth<860;if(m!==lastMob)slapAll()});
+function slapAll(){lastMob=innerWidth<860;
+  const box=$("#slap");box.innerHTML="";const mob=innerWidth<860;
+  (mob?SLAPS_M:SLAPS).forEach(([k,x,y,w,r],i)=>{
+    const im=document.createElement("img");im.className="sk";im.alt="";im.draggable=false;im.src=IMG[k];
+    im.style.width=w+"px";im.style.left=`calc(${x}% - ${w/2}px)`;im.style.top=mob?`${y}px`:`calc(${y}% - ${w/3}px)`;
+    im.style.setProperty("--r",`rotate(${r}deg)`);im.style.transform=`rotate(${r}deg)`;im.dataset.r=r;
+    if(!RM){im.classList.add("slapin");im.style.animationDelay=(.35+i*.11)+"s"}
+    box.appendChild(im);
+  });
+}
+slapAll();
+$("#reslap").onclick=slapAll;
+let drag=null,zTop=10;
+$("#slap").addEventListener("pointerdown",e=>{
+  const el=e.target.closest(".sk");if(!el)return;e.preventDefault();
+  el.classList.remove("slapin");el.getAnimations().forEach(a=>a.cancel());
+  const bx=$("#slap").getBoundingClientRect(),r=el.getBoundingClientRect();
+  drag={el,dx:e.clientX-r.left,dy:e.clientY-r.top,bx};el.setPointerCapture(e.pointerId);
+  el.classList.add("lift");el.style.zIndex=++zTop;el.style.transform=`rotate(${(+el.dataset.r)*.4}deg) scale(1.12)`;
+});
+$("#slap").addEventListener("pointermove",e=>{if(!drag)return;const {el,dx,dy,bx}=drag;
+  el.style.left=(e.clientX-bx.left-dx)+"px";el.style.top=(e.clientY-bx.top-dy)+"px";});
+const drop=()=>{if(!drag)return;const el=drag.el;const r=Math.round(Math.random()*24-12);el.dataset.r=r;
+  el.classList.remove("lift");el.style.transform=`rotate(${r}deg) scale(1)`;drag=null};
+$("#slap").addEventListener("pointerup",drop);$("#slap").addEventListener("pointercancel",drop);
+</script>
+
+</body>
+</html>

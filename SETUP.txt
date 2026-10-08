@@ -1,0 +1,81 @@
+RIRI STUDIOS WEBSITE: HOW TO PUT IT ONLINE
+==========================================
+
+What's in this folder
+- public/          the website itself (index.html, success.html, img/)
+- netlify/functions/checkout.js    sends shoppers to Stripe checkout (prices are checked here)
+- netlify/functions/subscribe.js   adds newsletter sign-ups (footer and pop-up) to Mailchimp
+- netlify/functions/stripe-webhook.js  emails your framer when an order includes framing
+- netlify.toml     settings Netlify reads automatically
+Don't rename or move anything.
+
+1. GET YOUR KEYS (keep them private; never email or post them)
+   Stripe:    dashboard.stripe.com > Developers > API keys > Secret key.
+              Start with TEST mode (key starts sk_test_). Switch to live (sk_live_) at the end.
+   Mailchimp: Profile icon > Profile > Extras > API keys > Create A Key (looks like abc123...-us21).
+              Audience > Settings > Audience name and defaults > Audience ID (looks like a1b2c3d4e5).
+
+2. PUT THE FILES ON GITHUB (free)
+   - Make an account at github.com, click + > New repository, name it riri-studios, Private, Create.
+   - Click "uploading an existing file", drag in EVERYTHING inside this folder
+     (public, netlify, netlify.toml, SETUP.txt), then Commit changes.
+
+3. PUT IT ONLINE WITH NETLIFY (free)
+   - Sign up at netlify.com with your GitHub account.
+   - Add new project > Import an existing project > GitHub > riri-studios > Deploy.
+     (No build command needed; netlify.toml handles it.)
+
+4. ADD YOUR KEYS TO NETLIFY
+   Project configuration > Environment variables > Add a variable, one at a time:
+     STRIPE_SECRET_KEY        your Stripe secret key
+     MAILCHIMP_API_KEY        your Mailchimp API key
+     MAILCHIMP_AUDIENCE_ID    your Mailchimp audience ID
+   Optional:
+     SHIPPING_CAD             flat shipping under $75 (default 12)
+     FREE_SHIPPING_CAD        free shipping from this amount (default 75)
+     SHIP_COUNTRIES           default CA,US
+     MAILCHIMP_DOUBLE_OPTIN   true = new subscribers confirm by email first
+   Then Deploys > Trigger deploy > Deploy project, so the keys take effect.
+
+5. GET COMMISSION AND WHOLESALE REQUESTS BY EMAIL
+   Forms > Enable form detection. Then Deploys > Trigger deploy again.
+   Forms > Submission notifications > Add notification > Email notification > Arianna@riristudios.com.
+   (Choose "Any form" so both the commission and wholesale forms email you.)
+
+6. TEST, THEN GO LIVE
+   - With the sk_test_ key, buy something using card 4242 4242 4242 4242, any future date, any CVC.
+     The order shows in Stripe (test mode) > Payments, with every item, size and frame listed.
+   - Sign up through the pop-up and check Mailchimp. Send a test commission request.
+   - Finish Stripe's account activation, swap STRIPE_SECRET_KEY to your sk_live_ key, redeploy.
+
+7. FRAMING ORDERS EMAILED TO YOUR FRAMER (Sales@RiverosArt.com, copy to you)
+   a) Email sending: sign up free at resend.com > Domains > Add domain > riristudios.com.
+      Add the DNS records Resend shows in Wix (Domains > ... > Manage DNS Records), then Verify.
+      Then API Keys > Create API key (starts re_).
+   b) Stripe: Developers > Webhooks > Add endpoint (or "Add destination").
+      Endpoint URL: https://riristudios.com/.netlify/functions/stripe-webhook
+      (use your netlify.app link instead until the domain is connected)
+      Event: checkout.session.completed. Save, then reveal the Signing secret (starts whsec_).
+   c) Netlify environment variables, then Trigger deploy:
+      RESEND_API_KEY          your re_ key
+      STRIPE_WEBHOOK_SECRET   your whsec_ secret
+      Optional: FRAMER_EMAIL (default Sales@RiverosArt.com), ORDER_COPY_EMAIL (default Arianna@riristudios.com),
+                ORDER_FROM_EMAIL (default "RIRI Studios <orders@riristudios.com>")
+   d) Test: a test-mode order with a framed print should email the framer and you within a minute.
+      Note: test and live mode have separate webhooks and signing secrets. Repeat b) and c) in live mode.
+
+8. CONNECT riristudios.com
+   Domain management > Add a domain > riristudios.com, then follow Netlify's DNS steps
+   at the company where you bought the domain (Wix, GoDaddy, etc.). HTTPS is added automatically.
+
+Where orders show up: Stripe > Payments. Open a payment to see the items, sizes, frames,
+designs and the shipping address. Stripe emails the customer a receipt.
+
+The newsletter pop-up shows once per visitor (after 12 seconds or after scrolling a bit)
+and doesn't come back once they close it or subscribe.
+
+Tax: no sales tax is added at checkout. Once you're registered for HST, turn on Stripe Tax
+or ask Claude to add it.
+
+Changing prices or products later: ask Claude to update the site, then upload the changed
+files to GitHub the same way (Netlify redeploys on its own).
