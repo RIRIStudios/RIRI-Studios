@@ -710,7 +710,7 @@ header .bar nav a:hover,header .word{color:#efe7da}
         <p>Carry RIRI Studios hoodies in your shop, boutique or market stall. Tell us which designs, colours and sizes you're after and roughly how many, and Arianna will reply with wholesale pricing, minimums and timing.</p>
         <ul class="whl">
           <li><b>Designs</b><span>Love Bite, Original Sin, D.N.D, Kiss You Later</span></li>
-          <li><b>Colours</b><span>Creme or black</span></li>
+          <li><b>Colours</b><span>Cream or black</span></li>
           <li><b>Sizes</b><span>M, L and XL</span></li>
           <li><b>Questions</b><span><a href="mailto:Arianna@riristudios.com">Arianna@riristudios.com</a></span></li>
         </ul>
@@ -832,15 +832,15 @@ const $=s=>document.querySelector(s);
 
 /* hoodies: Riri's photos, working names */
 const HS=["M","L","XL"];
-const SW={Creme:"#efe4cf",Black:"#111"};
+const SW={Cream:"#efe4cf",Black:"#111"};
 const hoodies=[
- {id:"h1",name:"Love Bite",cols:{Creme:"creme_lips",Black:"black_lips"},desc:"Glossy red lips, fangs and a spider on the tongue, printed large across the back. Signature and tagline on the chest."},
- {id:"h2",name:"Original Sin",cols:{Creme:"creme_snake",Black:"black_snake"},desc:"A dark-haired beauty wrapped in a golden snake, painted in flame orange and violet."},
- {id:"h3",name:"D.N.D",cols:{Creme:"creme_lighter",Black:"black_lighter"},desc:"Orange curls, glasses low on her nose, flip phone in one hand and a cigarette in the other."},
- {id:"h4",name:"Kiss You Later",cols:{Creme:"creme_pinup",Black:"black_pinup"},desc:"A kneeling pin-up in a white corset, in Riri's glossy brushwork."}
+ {id:"h1",name:"Love Bite",cols:{Cream:"creme_lips",Black:"black_lips"},desc:"Glossy red lips, fangs and a spider on the tongue, printed large across the back. Signature and tagline on the chest."},
+ {id:"h2",name:"Original Sin",cols:{Cream:"creme_snake",Black:"black_snake"},desc:"A dark-haired beauty wrapped in a golden snake, painted in flame orange and violet."},
+ {id:"h3",name:"D.N.D",cols:{Cream:"creme_lighter",Black:"black_lighter"},desc:"Orange curls, glasses low on her nose, flip phone in one hand and a cigarette in the other."},
+ {id:"h4",name:"Kiss You Later",cols:{Cream:"creme_pinup",Black:"black_pinup"},desc:"A kneeling pin-up in a white corset, in Riri's glossy brushwork."}
 ];
 /* every hoodie shares the signature chest print on the front */
-const FRONT={Creme:"creme_front",Black:"black_front"};
+const FRONT={Cream:"creme_front",Black:"black_front"};
 const SIDES=["Back","Front"];
 const views=(h,c)=>[h.cols[c],FRONT[c]];
 const hs={},hv={};hoodies.forEach(h=>{hs[h.id]=Object.keys(h.cols)[0];hv[h.id]=0});
@@ -1006,7 +1006,7 @@ const tval=t=>t.slots.reduce((a,k)=>a+SL[k][1],0)+tframe(t);
 const tprice=t=>t.price+tframe(t);
 function slotHtml(t,k,i){const S=SL[k],sel=tsel[t.id][i],id=`${t.id}_${i}`;
   let extra="";
-  if(k==="hoodie")extra=`<div class="sel2"><div class="selw"><select id="${id}c" data-t="${t.id}" data-i="${i}" data-f="col" aria-label="Hoodie colour"><option ${!sel.col?"selected":""}>Creme</option><option ${sel.col?"selected":""}>Black</option></select></div><div class="selw"><select id="${id}s" data-t="${t.id}" data-i="${i}" data-f="sz" aria-label="Hoodie size">${HS.map((z,j)=>`<option ${(sel.sz||0)===j?"selected":""}>${z}</option>`).join("")}</select></div></div>`;
+  if(k==="hoodie")extra=`<div class="sel2"><div class="selw"><select id="${id}c" data-t="${t.id}" data-i="${i}" data-f="col" aria-label="Hoodie colour"><option ${!sel.col?"selected":""}>Cream</option><option ${sel.col?"selected":""}>Black</option></select></div><div class="selw"><select id="${id}s" data-t="${t.id}" data-i="${i}" data-f="sz" aria-label="Hoodie size">${HS.map((z,j)=>`<option ${(sel.sz||0)===j?"selected":""}>${z}</option>`).join("")}</select></div></div>`;
   if(k in PSIZE)extra=`<div class="selw"><select id="${id}f" data-t="${t.id}" data-i="${i}" data-f="fr" aria-label="Framing for this print">${FRAMES.map((F,j)=>`<option value="${j}" ${j===sel.fr?"selected":""}>${j?`Framed: ${F[0]} +${fmt(F[1][PSIZE[k]])}`:"Unframed"}</option>`).join("")}</select></div>`;
   const single=S[3].length===1;
   return `<li><label for="${id}"><span>${S[0]}</span><span class="num">${fmt(S[1])}</span></label>${single?`<div class="fixed">${S[3][0]}</div>`:`<div class="selw"><select id="${id}" data-t="${t.id}" data-i="${i}" data-f="v">${S[3].map((o,j)=>`<option value="${j}" ${j===sel.v?"selected":""}>${o}</option>`).join("")}</select></div>`}${extra}</li>`}
@@ -1019,7 +1019,7 @@ function drawTiers(){$("#tiers").innerHTML=tiers.map(t=>{const v=tval(t);return 
   <button class="btn ${t.feat?"":"ghost"}" data-tier="${t.id}">Add to bag</button></div>`}).join("")}
 drawTiers();
 $("#tiers").addEventListener("change",e=>{const el=e.target.closest("select");if(!el)return;const f=el.dataset.f;tsel[el.dataset.t][+el.dataset.i][f]=(f==="v"||f==="fr")?+el.value:el.selectedIndex;const t=tiers.find(x=>x.id===el.dataset.t);$("#tp_"+t.id).innerHTML=tpHtml(t)});
-function tierSummary(t){return t.slots.map((k,i)=>{const S=SL[k],sel=tsel[t.id][i];let o=S[3].length>1?`${S[0]}: ${S[3][sel.v]}`:S[0];if(k==="hoodie")o+=` (${sel.col?"Black":"Creme"}, ${HS[sel.sz||0]})`;if(k in PSIZE&&sel.fr)o+=`, framed in ${FRAMES[sel.fr][0]}`;return o}).join(" · ")}
+function tierSummary(t){return t.slots.map((k,i)=>{const S=SL[k],sel=tsel[t.id][i];let o=S[3].length>1?`${S[0]}: ${S[3][sel.v]}`:S[0];if(k==="hoodie")o+=` (${sel.col?"Black":"Cream"}, ${HS[sel.sz||0]})`;if(k in PSIZE&&sel.fr)o+=`, framed in ${FRAMES[sel.fr][0]}`;return o}).join(" · ")}
 
 /* clicks */
 document.addEventListener("click",e=>{
