@@ -110,6 +110,7 @@ exports.handler = async (event) => {
   p.append("mode", "payment");
   p.append("success_url", `${origin}/success.html?session_id={CHECKOUT_SESSION_ID}`);
   p.append("cancel_url", `${origin}/#shop`);
+  p.append("allow_promotion_codes", "true");
   p.append("billing_address_collection", "auto");
   p.append("phone_number_collection[enabled]", "true");
   countries.forEach((c, i) => p.append(`shipping_address_collection[allowed_countries][${i}]`, c));
